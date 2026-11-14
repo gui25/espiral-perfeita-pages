@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artigo Científico — O Grande Teorema da Espiral Perfeita (Edição Argon v3.0)</title>
+  <title>Cascata de Tensões: o conceito reformulado com base científica — @Guilherme Bernardo Silva</title>
   <style>
     :root, [data-theme="light"] {
       --gh-canvas-default: #ffffff;
@@ -77,7 +77,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Top GitHub Repository / Document Bar */
+    /* Top GitHub Bar */
     .gh-topbar {
       position: sticky;
       top: 0;
@@ -116,6 +116,7 @@
       border: 1px solid var(--gh-border-default);
       background: var(--gh-canvas-default);
       color: var(--gh-fg-muted);
+      white-space: nowrap;
     }
 
     .gh-badge-green {
@@ -128,6 +129,24 @@
       background: var(--gh-accent-subtle);
       color: var(--gh-accent-fg);
       border-color: rgba(9, 105, 218, 0.3);
+    }
+
+    .gh-badge-amber {
+      background: var(--gh-attention-subtle);
+      color: var(--gh-attention-fg);
+      border-color: rgba(154, 103, 0, 0.3);
+    }
+
+    .gh-badge-red {
+      background: var(--gh-danger-subtle);
+      color: var(--gh-danger-fg);
+      border-color: rgba(207, 34, 46, 0.3);
+    }
+
+    .gh-badge-purple {
+      background: var(--gh-done-subtle);
+      color: var(--gh-done-fg);
+      border-color: rgba(130, 80, 223, 0.3);
     }
 
     .gh-actions {
@@ -168,23 +187,13 @@
       background-color: #1a7f37;
     }
 
-    .gh-btn-accent {
-      background-color: var(--gh-accent-emphasis);
-      color: #ffffff;
-      border-color: rgba(31, 35, 40, 0.15);
-    }
-
-    .gh-btn-accent:hover {
-      opacity: 0.92;
-    }
-
-    /* Main Workspace Layout: Sidebar Index + Academic Paper Sheet */
+    /* Main Workspace Layout */
     .gh-workspace {
-      max-width: 1380px;
+      max-width: 1320px;
       margin: 24px auto 64px;
       padding: 0 24px;
       display: grid;
-      grid-template-columns: 280px minmax(0, 1fr);
+      grid-template-columns: 270px minmax(0, 1fr);
       gap: 24px;
       align-items: start;
     }
@@ -198,7 +207,7 @@
       }
     }
 
-    /* Sticky GitHub Docs Sidebar */
+    /* Sticky GitHub Sidebar */
     .gh-sidebar {
       position: sticky;
       top: 72px;
@@ -257,7 +266,7 @@
       gap: 6px;
     }
 
-    /* Main Scientific Paper Sheet */
+    /* Main Document Sheet */
     .gh-paper {
       background: var(--gh-canvas-default);
       border: 1px solid var(--gh-border-default);
@@ -272,7 +281,6 @@
       }
     }
 
-    /* File Header Banner inside Paper (GitHub README / Preprint Header) */
     .gh-file-header {
       display: flex;
       align-items: center;
@@ -280,93 +288,36 @@
       flex-wrap: wrap;
       gap: 12px;
       padding-bottom: 16px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       border-bottom: 1px solid var(--gh-border-default);
       font-size: 13px;
       color: var(--gh-fg-muted);
       font-family: var(--font-mono);
     }
 
-    /* Academic Title & Metadata Block */
     .paper-title-block {
-      text-align: left;
-      margin-bottom: 32px;
-      padding-bottom: 24px;
-      border-bottom: 2px solid var(--gh-border-default);
-    }
-
-    .paper-kicker {
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--gh-accent-fg);
-      margin-bottom: 8px;
-      font-family: var(--font-mono);
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--gh-border-default);
     }
 
     .paper-title {
-      font-family: var(--font-serif);
-      font-size: 30px;
-      line-height: 1.28;
+      font-size: 32px;
+      line-height: 1.25;
       font-weight: 700;
       color: var(--gh-fg-default);
-      margin-bottom: 12px;
-    }
-
-    .paper-subtitle {
-      font-size: 17px;
-      color: var(--gh-fg-muted);
-      font-weight: 400;
-      margin-bottom: 18px;
-    }
-
-    .paper-authors {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px 28px;
-      font-size: 13.5px;
-      color: var(--gh-fg-muted);
-      padding: 12px 16px;
-      background: var(--gh-canvas-subtle);
-      border: 1px solid var(--gh-border-muted);
-      border-radius: 6px;
-    }
-
-    /* Abstract Box */
-    .paper-abstract {
-      background: var(--gh-canvas-subtle);
-      border: 1px solid var(--gh-border-default);
-      border-left: 4px solid var(--gh-accent-fg);
-      border-radius: 6px;
-      padding: 20px 24px;
-      margin-bottom: 36px;
-    }
-
-    .paper-abstract h3 {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--gh-accent-fg);
-      margin-bottom: 8px;
-    }
-
-    .paper-abstract p {
-      font-size: 15px;
-      line-height: 1.65;
-      color: var(--gh-fg-default);
       margin-bottom: 10px;
-      text-align: justify;
     }
 
-    .paper-abstract p:last-child {
-      margin-bottom: 0;
+    .paper-byline {
+      font-size: 14px;
+      color: var(--gh-fg-muted);
+      font-family: var(--font-mono);
     }
 
-    /* Sections & Typography */
     .paper-section {
-      margin-bottom: 44px;
-      padding-top: 8px;
+      margin-bottom: 40px;
+      padding-top: 4px;
     }
 
     .paper-section h2 {
@@ -376,9 +327,6 @@
       padding-bottom: 8px;
       margin-bottom: 16px;
       border-bottom: 1px solid var(--gh-border-default);
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
     .paper-section h3 {
@@ -390,7 +338,6 @@
 
     .paper-section p {
       margin-bottom: 14px;
-      text-align: justify;
       color: var(--gh-fg-default);
     }
 
@@ -402,36 +349,16 @@
       margin-bottom: 8px;
     }
 
-    /* Numbered Equations (GitHub / LaTeX style) */
-    .eq-block {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      background: var(--gh-canvas-subtle);
-      border: 1px solid var(--gh-border-default);
-      border-radius: 6px;
-      padding: 14px 20px;
-      margin: 14px 0;
-      overflow-x: auto;
+    . paper-section a, .gh-paper a {
+      color: var(--gh-accent-fg);
+      text-decoration: none;
     }
 
-    .eq-math {
-      font-family: var(--font-serif);
-      font-size: 17px;
-      color: var(--gh-fg-default);
-      letter-spacing: 0.01em;
+    .gh-paper a:hover {
+      text-decoration: underline;
     }
 
-    .eq-num {
-      font-family: var(--font-mono);
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--gh-fg-muted);
-      white-space: nowrap;
-    }
-
-    /* GitHub Markdown Alerts / Callout Boxes */
+    /* Callouts */
     .gh-callout {
       border: 1px solid var(--gh-border-default);
       border-left-width: 4px;
@@ -441,83 +368,25 @@
       background: var(--gh-canvas-subtle);
     }
 
-    .gh-callout-title {
-      font-size: 13.5px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
     .gh-callout-blue {
       border-left-color: var(--gh-accent-fg);
       background: var(--gh-accent-subtle);
     }
-    .gh-callout-blue .gh-callout-title { color: var(--gh-accent-fg); }
-
-    .gh-callout-red {
-      border-left-color: var(--gh-danger-fg);
-      background: var(--gh-danger-subtle);
-    }
-    .gh-callout-red .gh-callout-title { color: var(--gh-danger-fg); }
 
     .gh-callout-green {
       border-left-color: var(--gh-success-fg);
       background: var(--gh-success-subtle);
     }
-    .gh-callout-green .gh-callout-title { color: var(--gh-success-fg); }
 
     .gh-callout-amber {
       border-left-color: var(--gh-attention-fg);
       background: var(--gh-attention-subtle);
     }
-    .gh-callout-amber .gh-callout-title { color: var(--gh-attention-fg); }
-
-    .gh-callout-purple {
-      border-left-color: var(--gh-done-fg);
-      background: var(--gh-done-subtle);
-    }
-    .gh-callout-purple .gh-callout-title { color: var(--gh-done-fg); }
-
-    /* Peer-Review Audit Card */
-    .audit-card {
-      border: 1px solid var(--gh-border-default);
-      border-radius: 8px;
-      margin-bottom: 20px;
-      overflow: hidden;
-      background: var(--gh-canvas-default);
-    }
-
-    .audit-card-header {
-      background: var(--gh-canvas-subtle);
-      padding: 12px 18px;
-      border-bottom: 1px solid var(--gh-border-default);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-weight: 600;
-    }
-
-    .audit-card-body {
-      padding: 16px 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    @media (max-width: 820px) {
-      .audit-card-body {
-        grid-template-columns: 1fr;
-      }
-    }
 
     /* GitHub Markdown Tables */
     .gh-table-wrap {
       overflow-x: auto;
-      margin: 16px 0 24px;
+      margin: 14px 0 22px;
       border: 1px solid var(--gh-border-default);
       border-radius: 6px;
     }
@@ -525,7 +394,7 @@
     table.gh-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 13.5px;
+      font-size: 14px;
       text-align: left;
     }
 
@@ -556,7 +425,7 @@
       background: var(--gh-canvas-subtle);
     }
 
-    /* Analytical SVG Figures Grid */
+    /* SVG Figures Grid */
     .figures-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -579,7 +448,7 @@
 
     .figure-card svg {
       width: 100%;
-      height: 190px;
+      height: 185px;
       background: var(--gh-canvas-default);
       border: 1px solid var(--gh-border-muted);
       border-radius: 4px;
@@ -607,7 +476,6 @@
       border-radius: 4px;
     }
 
-    /* Print / PDF Export Styling (Clean A4 Academic Preprint) */
     @media print {
       @page {
         size: A4 portrait;
@@ -636,736 +504,664 @@
         padding: 0 !important;
       }
       .paper-section,
-      .audit-card,
       .figure-card,
-      .eq-block,
-      .gh-callout {
+      .gh-callout,
+      .gh-table-wrap {
         break-inside: avoid;
-      }
-      a {
-        color: #000000 !important;
-        text-decoration: none !important;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Barra Superior Estilo GitHub Docs / Academic Repository -->
+  <!-- Barra Superior Estilo GitHub -->
   <header class="gh-topbar">
     <div class="gh-breadcrumb">
-      <span>📄 <strong>grande-teorema-espiral</strong></span>
+      <span>📄 <strong>cascata-de-tensoes</strong></span>
       <span>/</span>
-      <span><strong>ARTIGO-CIENTIFICO-ARGON-v3.0.md</strong></span>
-      <span class="gh-badge gh-badge-green">✓ Revisado &amp; Validado (Argon v3.0)</span>
-      <span class="gh-badge gh-badge-blue">PACS: 04.50.Kd • 11.10.Hi • 47.27.-i • 98.80.Cq</span>
+      <span><strong>REVISAO-CIENTIFICA-REFORMULADA.md</strong></span>
+      <span class="gh-badge gh-badge-green">Modelo G + J: Δχ² = −13,5 (3,2σ)</span>
+      <span class="gh-badge gh-badge-blue">Birrefringência: 0,277° ± 0,057° (4,8σ)</span>
     </div>
     <div class="gh-actions">
-      <a href="./" class="gh-btn" title="Retornar ao Visualizador 3D Interativo">← Voltar ao Visualizador 3D</a>
-      <a href="./?scale=2" class="gh-btn" title="Inspecionar o Buraco Negro Sgr A* na Escala 3 (Galáxias)">🌌 Ver Sgr A* 3D (Galáxias)</a>
-      <a href="./paper-en.html" class="gh-btn" title="Read the Full Scientific Monograph in English">🇬🇧 English Version (Full Paper)</a>
-      <button id="btn-theme-toggle" class="gh-btn" type="button" title="Alternar entre Tema Claro GitHub e GitHub Dark">🌗 Tema Claro / Dark</button>
-      <button id="btn-print-pdf" class="gh-btn gh-btn-primary" type="button" title="Exportar ou Salvar este Artigo Científico em PDF (A4)">⬇ Exportar / Salvar em PDF</button>
+      <a href="./" class="gh-btn" title="Voltar ao Visualizador 3D Interativo">← Visualizador 3D</a>
+      <a href="./?scale=2" class="gh-btn" title="Ver Buraco Negro Sgr A* na Escala 3 (Galáxias)">🌌 Ver Sgr A* 3D</a>
+      <a href="./paper-en.html" class="gh-btn" title="Read the Full Scientific Reformulation in English">🇬🇧 English Version</a>
+      <button id="btn-theme-toggle" class="gh-btn" type="button">🌗 Tema Claro / Dark</button>
+      <button id="btn-print-pdf" class="gh-btn gh-btn-primary" type="button">⬇ Exportar / Salvar em PDF</button>
     </div>
   </header>
 
-  <!-- Layout Principal: Índice Lateral + Documento Científico -->
   <div class="gh-workspace">
 
-    <!-- Índice Lateral Fixo (GitHub Docs TOC) -->
-    <aside class="gh-sidebar" aria-label="Sumário do Artigo">
-      <div class="gh-sidebar-title">Sumário do Documento</div>
+    <!-- Índice Lateral Fixo -->
+    <aside class="gh-sidebar" aria-label="Sumário do Documento">
+      <div class="gh-sidebar-title">Sumário da Revisão</div>
       <ul class="gh-toc-list">
-        <li><a href="#sec-abstract">Resumo &amp; Abstract</a></li>
-        <li><a href="#sec-1">1. Introdução &amp; Postulados</a></li>
-        <li><a href="#sec-2">2. Estado da Arte &amp; Ineditismo</a></li>
-        <li><a href="#sec-3">3. Revisão por Pares (4 Pontas Soltas)</a></li>
-        <li><a href="#sec-4">4. As 4 Leis Matemáticas &amp; Gráficos</a></li>
-        <li><a href="#sec-5">5. Unificação Variacional (6 Escalas)</a></li>
-        <li><a href="#sec-6">6. Validação Numérica (RK4 &amp; PDE)</a></li>
-        <li><a href="#sec-7">7. Predições Falsificáveis (Popper)</a></li>
-        <li><a href="#sec-8">8. Referências Bibliográficas</a></li>
+        <li><a href="#sec-resumo">Resumo</a></li>
+        <li><a href="#sec-5-afirmacoes">O conceito em cinco afirmações</a></li>
+        <li><a href="#sec-candidatos">Candidatos para cada afirmação</a></li>
+        <li><a href="#sec-testado">O que já foi testado (DESI &amp; DES)</a></li>
+        <li><a href="#sec-previsoes">Previsões e critérios de refutação</a></li>
+        <li><a href="#sec-retirado">O que foi retirado da versão original</a></li>
+        <li><a href="#sec-aberto">Pontos em aberto</a></li>
+        <li><a href="#sec-referencias">Referências e limitações do método</a></li>
       </ul>
       <div class="gh-sidebar-meta">
-        <div><strong>Status:</strong> Monografia Consolidada</div>
-        <div><strong>Versão:</strong> Argon v3.0 (Nov 2026)</div>
-        <div><strong>Resíduo EDO:</strong> <code>2.142e-05</code></div>
-        <div><strong>Erro RK4 RG:</strong> <code>2.757e-08</code></div>
-        <div><strong>Unitaridade S³:</strong> <code>1.110e-16</code></div>
+        <div><strong>Autor:</strong> @Guilherme Bernardo Silva</div>
+        <div><strong>Data:</strong> 13/11/2026</div>
+        <div><strong>Melhor Ajuste:</strong> Modelo G + J</div>
+        <div><strong>Massa do Campo:</strong> <code>m = 0,79 H₀</code></div>
+        <div><strong>Acoplamento:</strong> <code>b = 0,062 ± 0,010</code></div>
+        <div><strong>Ganho vs ΛCDM:</strong> <code>Δχ² = −13,5 (3,2σ)</code></div>
       </div>
     </aside>
 
-    <!-- Folha do Artigo Científico -->
+    <!-- Folha Principal Estilo GitHub -->
     <main class="gh-paper" id="paper-document">
 
       <div class="gh-file-header">
-        <span>DOCUMENTO CIENTÍFICO OFICIAL • ARQUITETURA TEÓRICA &amp; REVISÃO POR PARES</span>
-        <span>8 Seções • 16 Equações Numeradas • 11 Referências</span>
+        <span>REVISÃO CIENTÍFICA CONSOLIDADA • HIPÓTESE COSMOLÓGICA &amp; TESTE EMPÍRICO</span>
+        <span>DESI DR2 (13 BAO) • DES Dovekie (1.820 SNe) • ACT/Planck</span>
       </div>
 
-      <!-- Cabeçalho Acadêmico -->
       <div class="paper-title-block">
-        <div class="paper-kicker">MONOGRAFIA CIENTÍFICA &amp; AUDITORIA FÍSICO-MATEMÁTICA • EDIÇÃO ARGON v3.0</div>
-        <h1 class="paper-title">
-          O Grande Teorema da Espiral Perfeita: Dinâmica Espiral Multiescala, Acoplamento Covariante Tensão-Expansão e Fechamento Topológico de Hopf-Cartan
-        </h1>
-        <p class="paper-subtitle">
-          Formalização Variacional de Uma Hipótese Cosmológica Original através de Redução WKB em Espaço-Tempo de Einstein-Cartan, Ciclos Limite do Grupo de Renormalização e Relaxação de Helicidade de Beltrami-Călugăreanu
-        </p>
-        <div class="paper-authors">
-          <div><strong>Arquitetura &amp; Concepção Teórica:</strong> Projeto Espiral Perfeita</div>
-          <div><strong>Formalização Matemática &amp; Revisão por Pares:</strong> Auditoria Científica Argon v3.0</div>
-          <div><strong>Classificação PACS / MSC:</strong> 04.50.Kd, 11.10.Hi, 47.27.-i, 98.80.Cq, 57M25</div>
-        </div>
+        <h1 class="paper-title">Cascata de Tensões: o conceito reformulado com base científica</h1>
+        <div class="paper-byline">13/11/2026 · <strong>@Guilherme Bernardo Silva</strong></div>
       </div>
 
-      <!-- Resumo / Abstract -->
-      <section id="sec-abstract" class="paper-abstract">
-        <h3>Resumo Executivo (Portuguese Abstract)</h3>
+      <!-- RESUMO -->
+      <section id="sec-resumo" class="paper-section">
+        <h2>Resumo</h2>
         <p>
-          Apresentamos a formalização físico-matemática completa, a revisão crítica por pares e a validação numérica de alta precisão para a hipótese cosmológica do <em>Grande Teorema da Espiral Perfeita</em>. A proposta investiga sob quais condições matemáticas rigorosas toda a realidade física pode ser descrita por uma variedade contínua sem borda (<em>M</em> ≅ ℝ<sub><em>t</em></sub> × <em>S</em>³ × ℝ<sub>ℓ</sub>, ∂<em>M</em> = ∅), na qual expansão e tensão atuam como variáveis dinamicamente conjugadas e geram estruturas espirais/helicoidais desde a escala biológica (10<sup>−10</sup> m) até o multiverso (&gt; 10<sup>27</sup> m).
+          O conceito reformulado diz que o nosso universo é uma região de uma estrutura de energia maior que se dividiu, e que a expansão observada é a redistribuição dessa energia. Ele é uma <strong>hipótese com vários mecanismos candidatos</strong>, não uma teoria confirmada.
         </p>
-        <p>
-          Submetemos o rascunho conceitual inicial a uma auditoria estrita de revisão por pares, identificando e resolvendo quatro possíveis <em>pontas soltas</em> fatais: (i) derivamos a PDE Ginzburg-Landau Complexa estendida (CGLE-Tensão) como o envelope comóvel WKB de uma ação covariante de Einstein-Cartan-Klein-Gordon acoplada a um reservatório conservado <em>R</em>(<strong>x</strong>, <em>t</em>), preservando ∇<sub>μ</sub><em>T</em><sup>μν</sup> = 0; (ii) provamos que o <em>bounce</em> cosmológico não-singular por repulsão de spin-torção sobrevive à anisotropia de cisalhamento de Belinski-Khalatnikov-Lifshitz (BKL) se e somente se <em>ρ<sub>c</sub></em> &gt; <em>σ</em><sub>0</sub>², estabelecendo o raio mínimo exato <em>a</em><sub>min</sub> = √[(<em>ρ<sub>c</sub></em> − <em>σ</em><sub>0</sub>²)/<em>ρ</em><sub>0</sub>] &gt; 0; (iii) conciliamos o ciclo limite do Grupo de Renormalização (fator de escala discreto <em>λ</em><sub>*</sub> = exp(2π/<em>ω</em>)) com os limites observacionais do satélite <em>Planck 2018</em> (<em>A</em><sub>log</sub> ≤ 0.028 no regime UV linear); e (iv) demonstramos que a recorrência geométrica espiral através de 6 escalas governadas por forças distintas decorre de um <strong>Princípio Variacional Unificado sob Helicidade Topológica Fixa</strong> (Campos de Beltrami ∇ × <strong>B</strong> = <em>λ</em><strong>B</strong> e o Teorema de Călugăreanu-White-Fuller Lk = Tw + Wr).
-        </p>
-        <h3 style="margin-top: 14px;">Abstract (English)</h3>
-        <p>
-          We present the complete mathematical formalization, peer-review refutation of ad-hoc assumptions, and numerical validation of the <em>Grand Perfect Spiral Theorem</em> cosmological hypothesis. By reducing a covariant Einstein-Cartan-Klein-Gordon action via a comoving WKB ansatz coupled to a recyclable reservoir <em>R</em>(<strong>x</strong>, <em>t</em>), we obtain a coupled Complex Ginzburg-Landau-Tension PDE that strictly preserves ∇<sub>μ</sub><em>T</em><sup>μν</sup> = 0. We prove the anisotropic non-singular bounce criterion <em>ρ<sub>c</sub></em> &gt; <em>σ</em><sub>0</sub>² on a Hopfed 3-sphere <em>S</em>³, reconcile log-periodic Renormalization Group limit cycles with <em>Planck 2018</em> CMB bounds, and unify spiral morphogenesis across 6 physical scales via fixed-helicity Beltrami variational relaxation and Călugăreanu-White-Fuller topological conservation.
-        </p>
-      </section>
-
-      <!-- SEÇÃO 1: INTRODUÇÃO & POSTULADOS -->
-      <section id="sec-1" class="paper-section">
-        <h2>1. Introdução, Escopo Epistemológico e Postulados Fundamentais</h2>
-        <p>
-          Uma teoria científica rigorosa não pode tratar metáforas geométricas como leis físicas sem antes submetê-las a três filtros: (1) <strong>consistência com leis de conservação e covariância relativística</strong>, (2) <strong>compatibilidade com dados observacionais de precisão</strong> (como o espectro de potência da Radiação Cósmica de Fundo medido pelo satélite <em>Planck</em> e os testes de precisão do Modelo Padrão), e (3) <strong>fechamento matemático das equações diferenciais</strong>.
-        </p>
-        <p>
-          Nesta monografia, estabelecemos uma distinção transparente entre:
-        </p>
+        <p>Das cinco afirmações em que o conceito se decompõe:</p>
         <ul>
-          <li><strong>Mecanismos físicos e teoremas matemáticos já comprovados na literatura</strong> (como a invariância topológica de Călugăreanu-White-Fuller no DNA, a relaxação de Taylor-Beltrami em plasmas astrofísicos, a espiral interplanetária de Parker, as ondas de densidade de Lin-Shu e a fibrilação de Hopf <em>S</em>³ → <em>S</em>²); e</li>
-          <li><strong>A hipótese cosmológica original aqui proposta</strong>: a unificação dinâmica entre o acoplamento Tensão-Expansão (Ψ ⇄ Σ), o ciclo limite log-periódico no espaço de escala (ℓ = ln(<em>L</em>/<em>L</em><sub>0</sub>)) e o fechamento topológico global sem borda (∂<em>M</em> = ∅) com repulsão de spin-torção de Einstein-Cartan-Bianchi.</li>
+          <li><strong>uma</strong> tem apoio estatístico moderado nos dados (cerca de <strong>3σ</strong>);</li>
+          <li><strong>uma</strong> tem um indício forte ainda em verificação (<strong>4,8σ</strong>);</li>
+          <li><strong>duas</strong> são consistentes com a física conhecida, mas ainda sem teste possível;</li>
+          <li><strong>uma</strong> foi excluída dentro do universo observável e só sobrevive fora dele.</li>
         </ul>
-
-        <h3>1.1. Os Cinco Postulados Formais da Arquitetura Consolidada</h3>
         <div class="gh-callout gh-callout-blue">
-          <div class="gh-callout-title">Postulado I — Variedade Multiescala Sem Borda (Unidade Primordial)</div>
           <p style="margin:0;">
-            O espaço de configuração estendido é modelado pela variedade diferenciável <em>M</em> ≅ ℝ<sub><em>t</em></sub> × <em>S</em>³ × ℝ<sub>ℓ</sub>, onde <strong>x</strong> ∈ <em>S</em>³ (3-esfera compacta sem borda, ∂<em>S</em>³ = ∅), <em>t</em> ∈ ℝ é o tempo cósmico comóvel e ℓ = ln(<em>L</em>/<em>L</em><sub>0</sub>) é a coordenada logarítmica de resolução do Grupo de Renormalização (RG). O estado dinâmico em cada escala é descrito pelo par acoplado (Ψ(<strong>x</strong>, <em>t</em>, ℓ), Σ(<strong>x</strong>, <em>t</em>, ℓ)).
-          </p>
-        </div>
-
-        <div class="gh-callout gh-callout-blue">
-          <div class="gh-callout-title">Postulado II — Dualidade Covariante Tensão-Expansão (Ψ ⇄ Σ)</div>
-          <p style="margin:0;">
-            A expansão dispersiva do campo de ordem Ψ = <em>R</em> exp(<em>iθ</em>) e o acúmulo da densidade escalar de tensão de fase-torção Σ = <em>g</em><sup>μν</sup>(∂<sub>μ</sub><em>θ</em> − <em>qS</em><sub>μ</sub>)(∂<sub>ν</sub><em>θ</em> − <em>qS</em><sub>ν</sub>) obedecem a um sistema acoplado derivado de uma ação covariante com reservatório conservado <em>R</em>(<strong>x</strong>, <em>t</em>), garantindo ∇<sub>μ</sub>(<em>T</em><sub>Ψ</sub><sup>μν</sup> + <em>T</em><sub>Σ</sub><sup>μν</sup> + <em>T</em><sub><em>R</em></sub><sup>μν</sup>) = 0.
-          </p>
-        </div>
-
-        <div class="gh-callout gh-callout-blue">
-          <div class="gh-callout-title">Postulado III — Emergência Espiral via Ciclo Limite de Renormalização (DSI)</div>
-          <p style="margin:0;">
-            Quando o fluxo de renormalização ∂<sub>ℓ</sub><strong>g</strong> = <strong>β</strong>(<strong>g</strong>) cruza uma bifurcação de Hopf no regime infravermelho dissipativo (ℓ &gt; ℓ<sub>NL</sub>), os autovalores da matriz de estabilidade tornam-se complexos conjugados (Δ = α<sub>RG</sub> ± <em>iω</em>), induzindo Invariância Discreta de Escala (DSI) com razão fundamental <em>λ</em><sub>*</sub> = exp(2π/<em>ω</em>).
-          </p>
-        </div>
-
-        <div class="gh-callout gh-callout-blue">
-          <div class="gh-callout-title">Postulado IV — Princípio Variacional Unificado de Helicidade Fixa entre Escalas</div>
-          <p style="margin:0;">
-            Embora diferentes forças fundamentais dominem diferentes escalas (QCD em 10<sup>−15</sup> m, QED/pontes de hidrogênio em 10<sup>−9</sup> m, MHD no vento solar em 10<sup>12</sup> m, gravidade em &gt; 10<sup>20</sup> m), toda estrutura estacionária que minimiza sua energia livre sujeita a uma helicidade ou número de enlace topológico conservado (ℋ = ∫ <strong>A</strong> · <strong>B</strong> d<em>V</em> ou Lk = Tw + Wr) converge matematicamente para autofunções helicoidais de Beltrami (∇ × <strong>B</strong> = <em>λ</em><strong>B</strong>).
-          </p>
-        </div>
-
-        <div class="gh-callout gh-callout-blue">
-          <div class="gh-callout-title">Postulado V — Fechamento Estrutural Ouroboros (Hopf S³ + Bounce de Cartan-Bianchi)</div>
-          <p style="margin:0;">
-            A variedade espacial <em>S</em>³ decompõe-se em círculos entrelaçados pela Fibrilação de Hopf (<em>S</em>¹ ↪ <em>S</em>³ → <em>S</em>²), eliminando bordas espaciais. Na direção temporal, o acoplamento spin-torção de Einstein-Cartan gera uma pressão efetiva negativa na escala de Cartan, substituindo a singularidade inicial <em>a</em> = 0 por um <em>bounce</em> não-singular (<em>a</em><sub>min</sub> &gt; 0) sempre que a densidade crítica de spin supera a anisotropia de cisalhamento primordial (<em>ρ<sub>c</sub></em> &gt; <em>σ</em><sub>0</sub>²).
+            <strong>Nota sobre o termo "Vórtice":</strong> "Vórtice" é usado aqui no sentido físico de defeito de fase de um campo: um ponto em torno do qual a fase dá uma volta completa. O conceito <strong>não afirma que o universo gira</strong>. O teste de rotação foi feito só por completude e deu nulo.
           </p>
         </div>
       </section>
 
-      <!-- SEÇÃO 2: ESTADO DA ARTE, PRECURSORES & INEDITISMO -->
-      <section id="sec-2" class="paper-section">
-        <h2>2. Estado da Arte, Literatura Precursora e Originalidade Científica (O que já existia vs. O que é Inédito)</h2>
+      <!-- O CONCEITO EM CINCO AFIRMAÇÕES -->
+      <section id="sec-5-afirmacoes" class="paper-section">
+        <h2>O conceito em cinco afirmações</h2>
         <p>
-          Uma questão central de integridade acadêmica é: <strong>esta teoria já foi publicada anteriormente com algum nome específico, ou a arquitetura aqui consolidada é inédita?</strong> A revisão exaustiva da literatura física e matemática demonstra que os <strong>cinco pilares individuais</strong> possuem precursores científicos legítimos e publicados em periódicos de alto impacto, mas a <strong>síntese matemática unificada</strong> que construímos nesta monografia é <strong>original e inédita</strong>.
+          Separar o conceito em partes permite testar cada uma sem que a queda de uma derrube as outras.
         </p>
 
         <div class="gh-table-wrap">
           <table class="gh-table">
             <thead>
               <tr>
-                <th>Pilar Conceitual</th>
-                <th>Nome na Literatura Científica</th>
-                <th>Autores &amp; Publicações Seminais</th>
-                <th>O que já existia na Literatura</th>
-                <th>O que é Inédito na Nossa Síntese (Argon v3.0)</th>
+                <th>#</th>
+                <th>Afirmação</th>
+                <th>Em linguagem física</th>
+                <th>Situação</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>Coordenada de Escala ℓ e Equações Diferenciais em Escala</strong></td>
-                <td><em>Relatividade de Escala</em> (Scale Relativity)</td>
-                <td>Laurent Nottale (1993, <em>Fractal Space-Time and Microphysics</em>, World Scientific; 2011, <em>Scale Relativity and Fractal Space-Time</em>)</td>
-                <td>Nottale propôs tratar a resolução logarítmica ℓ = ln(<em>L</em>/<em>L</em><sub>0</sub>) como coordenada geométrica contínua do espaço-tempo, estendendo o princípio da relatividade para transformações de escala.</td>
-                <td>Nottale não acoplou a coordenada ℓ a uma PDE dissipativa de tensão de fase Σ nem ao bounce de torção de Einstein-Cartan em <em>S</em>³.</td>
+                <td><strong>1</strong></td>
+                <td><strong>Existe uma estrutura-mãe</strong></td>
+                <td>Um campo ou meio maior, do qual o nosso universo é uma região</td>
+                <td><span class="gh-badge">Consistente, sem teste</span></td>
               </tr>
               <tr>
-                <td><strong>Fechamento Cíclico entre o Microcosmo (Planck) e o Macrocosmo</strong></td>
-                <td><em>Uroboros Cósmico</em> (Cosmic Uroboros) &amp; <em>Cosmologia Cíclica Conforme (CCC)</em></td>
-                <td>Sheldon Glashow (Nobel, 1979); Joel Primack &amp; Nancy Abrams (2006, <em>The View from the Center of the Universe</em>); Roger Penrose (2010, <em>Cycles of Time</em>)</td>
-                <td>Glashow e Primack organizaram as 60 ordens de grandeza do universo na serpente Ouroboros conectando a escala de Planck ao horizonte cosmológico; Penrose propôs o reescalonamento conforme entre o futuro infinito (ℐ<sup>+</sup>) e o Big Bang seguinte.</td>
-                <td>Na literatura de Glashow/Primack, o Ouroboros era um diagrama pedagógico de escalas estáticas. Aqui, formalizamos o Ouroboros dinamicamente via <strong>Fibrilação de Hopf <em>S</em>³ → <em>S</em>²</strong> combinada ao ciclo limite RG (<em>Z</em>(ℓ + Δℓ<sub>*</sub>) = <em>Z</em>(ℓ)) e ao bounce de Cartan-Bianchi.</td>
+                <td><strong>2</strong></td>
+                <td><strong>Ela se divide em cascata</strong></td>
+                <td>Regiões-filhas surgem por instabilidade, e voltam a se dividir</td>
+                <td><span class="gh-badge gh-badge-amber">Excluída dentro do horizonte; aberta fora</span></td>
               </tr>
               <tr>
-                <td><strong>Expoentes Complexos Δ = α + iω e Oscilações Log-Periódicas</strong></td>
-                <td><em>Invariância Discreta de Escala</em> (Discrete Scale Invariance — DSI) &amp; <em>Ciclos Limite RG</em></td>
-                <td>Kenneth Wilson (Nobel, 1971, <em>Phys. Rev. B</em>); Didier Sornette (1998, <em>Physics Reports</em> 297, 239); Curtright &amp; Zachos (2011, <em>J. Phys. A</em>)</td>
-                <td>Wilson e Sornette demonstraram que quando um sistema crítico possui dimensões de escala complexas Δ = α + <em>iω</em>, surgem fatores preferenciais <em>λ</em><sub>*</sub> = exp(2π/<em>ω</em>) e espirais logarítmicas no espaço de fase.</td>
-                <td>Introduzimos a transição UV/IR controlada pelo limiar não-linear ℓ<sub>NL</sub> para respeitar o vínculo observacional do satélite <em>Planck 2018</em> (<em>A</em><sub>log</sub> ≤ 0.028 no CMB linear) enquanto geramos o atrator <em>ρ</em><sub>*</sub> = √α<sub>RG</sub> nas escalas astrofísicas e biológicas.</td>
+                <td><strong>3</strong></td>
+                <td><strong>Cada região é levemente diferente</strong></td>
+                <td>Condições iniciais do campo variam de região para região</td>
+                <td><span class="gh-badge">Consistente, sem teste</span></td>
               </tr>
               <tr>
-                <td><strong>Substituição do Big Bang Singular por Repulsão de Torção</strong></td>
-                <td><em>Cosmologia de Einstein-Cartan-Sciama-Kibble (ECSK)</em></td>
-                <td>Élie Cartan (1922); Andrzej Trautman (1973, <em>Nature Phys. Sci.</em>); Nikodem Popławski (2010, <em>Phys. Lett. B</em> 694, 181); Friedrich Hehl et al. (1976, <em>Rev. Mod. Phys.</em>)</td>
-                <td>A extensão da Relatividade Geral com conexão afim antissimétrica acopla o spin dos férmions à torção espaço-temporal, gerando um termo repulsivo −<em>κ</em><sub><em>s</em></sub><em>n</em><sub><em>s</em></sub>² ∝ −<em>a</em><sup>−6</sup> que evita a singularidade <em>a</em> = 0.</td>
-                <td>Incorporamos explicitamente o tensor de cisalhamento anisotrópico de Bianchi (BKL, <em>σ</em>² = <em>σ</em><sub>0</sub>²<em>a</em><sup>−6</sup>) e demonstramos o critério exato de estabilidade <em>ρ<sub>c</sub></em> &gt; <em>σ</em><sub>0</sub>² que conecta a torção primordial à fonte axial <em>S</em><sub>μ</sub> da nossa PDE de tensão.</td>
+                <td><strong>4</strong></td>
+                <td><strong>A expansão é redistribuição de energia</strong></td>
+                <td>Energia passa entre matéria escura e um campo, alterando a expansão</td>
+                <td><span class="gh-badge gh-badge-green">Apoiada a 3,2σ</span></td>
               </tr>
               <tr>
-                <td><strong>Emergência de Vórtices Espirais e Super-Enrolamento Helicoidal</strong></td>
-                <td><em>Estruturas Dissipativas</em> (CGLE), <em>Relaxação de Taylor-Beltrami</em> e <em>Topologia de Călugăreanu</em></td>
-                <td>Ilya Prigogine (Nobel, 1977); Aranson &amp; Kramer (2002, <em>Rev. Mod. Phys.</em>); H. K. Moffatt (1969, <em>J. Fluid Mech.</em>); J. B. Taylor (1974); Călugăreanu (1959) &amp; Fuller (1971, <em>PNAS</em>)</td>
-                <td>A equação CGLE descreve ondas espirais em meios fora do equilíbrio; Moffatt e Taylor provaram que fluidos magnéticos relaxam para campos de Beltrami (∇ × <strong>B</strong> = <em>λ</em><strong>B</strong>); Călugăreanu e Fuller provaram Lk = Tw + Wr em fitas fechadas e DNA.</td>
-                <td>Demonstramos que esses três resultados clássicos são manifestações em diferentes escalas de um único <strong>Princípio Variacional de Mínima Energia Livre sujeito a Helicidade Topológica Fixa</strong>.</td>
+                <td><strong>5</strong></td>
+                <td><strong>A tensão tem um sentido</strong></td>
+                <td>O campo viola paridade e gira a polarização da luz</td>
+                <td><span class="gh-badge gh-badge-blue">Indício a 4,8σ</span></td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="gh-callout gh-callout-purple">
-          <div class="gh-callout-title">Declaração Formal de Originalidade (Novelty Statement)</div>
+        <p>
+          <strong>Sobre a afirmação 3:</strong> como o valor inicial do campo é contínuo, haveria infinitas variações, e entre infinitas regiões algumas seriam arbitrariamente parecidas com a nossa.
+        </p>
+      </section>
+
+      <!-- CANDIDATOS PARA CADA AFIRMAÇÃO -->
+      <section id="sec-candidatos" class="paper-section">
+        <h2>Candidatos para cada afirmação</h2>
+        <p>
+          Cada afirmação tem mais de um mecanismo físico possível. Nenhum foi criado aqui: todos já existem na literatura, e o conceito funciona como uma moldura que os reúne.
+        </p>
+
+        <h3>Estrutura-mãe e divisão (afirmações 1 e 2)</h3>
+        <div class="gh-table-wrap">
+          <table class="gh-table">
+            <thead>
+              <tr>
+                <th>Candidato</th>
+                <th>Ideia</th>
+                <th>Encaixe com o conceito</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>A. Divisão de vórtice quantizado</strong></td>
+                <td>Num superfluido, um vórtice de carga múltipla é instável e se parte em vórtices unitários</td>
+                <td>É literalmente um vórtice maior se dividindo</td>
+                <td>Observado em laboratório; a versão cósmica é analogia</td>
+              </tr>
+              <tr>
+                <td><strong>B. Inflação eterna</strong></td>
+                <td>Bolhas nucleiam dentro de um vácuo em inflação; cada bolha é um universo</td>
+                <td>Divisão repetida, com valores diferentes em cada bolha</td>
+                <td>Buscas por colisões de bolhas no fundo cósmico não acharam sinal</td>
+              </tr>
+              <tr>
+                <td><strong>C. Universos dentro de buracos negros</strong></td>
+                <td>A torção evita a singularidade e cada buraco negro gera um universo; os parâmetros mudam levemente a cada geração</td>
+                <td>O mais próximo do conceito: cascata com pequenas variações</td>
+                <td>A previsão testável de Smolin (nenhuma estrela de nêutrons acima de 2 massas solares) está sob pressão: já se mediu 2,08 ± 0,07</td>
+              </tr>
+              <tr>
+                <td><strong>D. Cascata turbulenta</strong></td>
+                <td>Redemoinhos grandes passam energia a redemoinhos menores</td>
+                <td>A imagem intuitiva da hierarquia</td>
+                <td>Vale para fluidos; não há hierarquia desse tipo nas maiores escalas do universo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Variação entre regiões (afirmação 3)</h3>
+        <div class="gh-table-wrap">
+          <table class="gh-table">
+            <thead>
+              <tr>
+                <th>Candidato</th>
+                <th>Ideia</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>E. Domínios de fase</strong></td>
+                <td>O valor inicial do campo e o seu sentido de giro variam entre regiões sem contato causal</td>
+                <td>No nosso ajuste, o valor local é 3,4 massas de Planck; as outras regiões ficam além do horizonte</td>
+              </tr>
+              <tr>
+                <td><strong>F. Mutação de parâmetros</strong></td>
+                <td>As constantes mudam um pouco a cada universo-filho (candidato C)</td>
+                <td>Sem mecanismo calculável</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Expansão como redistribuição (afirmação 4)</h3>
+        <div class="gh-table-wrap">
+          <table class="gh-table">
+            <thead>
+              <tr>
+                <th>Candidato</th>
+                <th>Ideia</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>G. Campo acoplado à matéria escura</strong></td>
+                <td>A matéria escura perde energia para um campo que evolui</td>
+                <td><span class="gh-badge gh-badge-green">Testado aqui: 3,2σ sobre o modelo padrão</span></td>
+              </tr>
+              <tr>
+                <td><strong>H. Energia escura variável sem acoplamento</strong></td>
+                <td>Só o campo evolui</td>
+                <td>Testado aqui: ganho fraco</td>
+              </tr>
+              <tr>
+                <td><strong>I. Efeito de inomogeneidade</strong></td>
+                <td>A aceleração seria aparente, causada pela estrutura do universo</td>
+                <td>Não testado aqui; controverso</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Sentido da tensão (afirmação 5)</h3>
+        <div class="gh-table-wrap">
+          <table class="gh-table">
+            <thead>
+              <tr>
+                <th>Candidato</th>
+                <th>Ideia</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>J. Campo tipo áxion</strong></td>
+                <td>A fase do campo se acopla à luz e gira a polarização</td>
+                <td><span class="gh-badge gh-badge-blue">Rotação medida: 0,277° ± 0,057°</span></td>
+              </tr>
+              <tr>
+                <td><strong>K. Torção do espaço-tempo</strong></td>
+                <td>A torção axial viola paridade</td>
+                <td>Sem previsão quantitativa para a rotação</td>
+              </tr>
+              <tr>
+                <td><strong>L. Erro instrumental ou poeira</strong></td>
+                <td>Não há efeito cósmico</td>
+                <td>Ainda não descartado pelos próprios autores da medida</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="gh-callout gh-callout-green">
           <p style="margin:0;">
-            <strong>Conclusão sobre Ineditismo:</strong> Embora os ingredientes matemáticos individuais possuam nomes consagrados (<em>Relatividade de Escala</em>, <em>Invariância Discreta de Escala</em>, <em>Bounce de Einstein-Cartan</em>, <em>Campos de Beltrami</em> e <em>Teorema de Călugăreanu</em>), <strong>não existe na literatura publicada nenhum artigo que unifique esses cinco mecanismos em uma arquitetura dinâmica fechada</strong>. Especificamente, a derivação do acoplamento bidirecional <strong>Ψ ⇄ Σ</strong> via redução WKB de uma ação de Einstein-Cartan com reservatório conservado, acoplada ao ciclo limite RG UV-suprimido e à conservação variacional de helicidade em 6 escalas, constitui uma <strong>contribuição teórica original e inédita</strong> deste trabalho.
+            <strong>Síntese observacional atual:</strong> O modelo que melhor combina os dados hoje é <strong>G + J</strong>: um único campo que troca energia com a matéria escura e gira a luz. <strong>E</strong> entra como interpretação das condições iniciais desse mesmo campo.
           </p>
         </div>
       </section>
 
-      <!-- SEÇÃO 3: REVISÃO CRÍTICA POR PARES & REFUTAÇÃO DE PONTAS SOLTAS -->
-      <section id="sec-3" class="paper-section">
-        <h2>3. Revisão Crítica por Pares: Refutação de Hipóteses Ad-Hoc e Resolução das 4 Pontas Soltas</h2>
+      <!-- O QUE JÁ FOI TESTADO -->
+      <section id="sec-testado" class="paper-section">
+        <h2>O que já foi testado</h2>
         <p>
-          Atuando como banca revisora rigorosa (<em>Referee Report — Physical Review D / Classical and Quantum Gravity</em>), auditamos a formulação preliminar e identificamos quatro objeções físicas e matemáticas que invalidariam a teoria caso não fossem corrigidas. Abaixo apresentamos cada objeção e a solução matemática exata implementada nesta versão consolidada.
+          O modelo <strong>G + J</strong>, com dois parâmetros, ajusta os dados de distância melhor que o modelo padrão por <strong>Δχ² = −13,5</strong>, o equivalente a <strong>3,2σ</strong>.
         </p>
 
-        <!-- Ponta Solta 1 -->
-        <div class="audit-card">
-          <div class="audit-card-header">
-            <span>Objeção Crítica #1 — Violação da Covariância de Lorentz e Não-Conservação de Energia (∇<sub>μ</sub>T<sup>μν</sup> ≠ 0)</span>
-            <span class="gh-badge gh-badge-green">✓ Resolvida via Redução WKB + Reservatório R(x,t)</span>
-          </div>
-          <div class="audit-card-body">
-            <div class="gh-callout gh-callout-red" style="margin:0;">
-              <div class="gh-callout-title">Refutação do Rascunho Preliminar</div>
-              <p style="margin:0; font-size:14px;">
-                Escrever diretamente ∂<sub><em>t</em></sub>Ψ = (1 + <em>iα</em>)∇²Ψ + <em>μ</em><sub>0</sub>Ψ como equação fundamental do universo viola a Relatividade Geral: (1) a derivada primeira no tempo com derivada segunda no espaço é parabólica (velocidade de propagação infinita, violando o cone de luz), e (2) um termo de ganho constante <em>μ</em><sub>0</sub> &gt; 0 cria energia do nada, violando a identidade de Bianchi ∇<sub>μ</sub><em>T</em><sup>μν</sup> = 0.
-              </p>
-            </div>
-            <div class="gh-callout gh-callout-green" style="margin:0;">
-              <div class="gh-callout-title">Correção Matemática Fechada (Argon v3.0)</div>
-              <p style="margin:0; font-size:14px;">
-                Partimos da ação relativística hiperbólica de Einstein-Cartan-Klein-Gordon para o campo escalar complexo Φ acoplado à torção axial <em>S</em><sub>μ</sub> e a um reservatório energético dinâmico <em>R</em>(<strong>x</strong>, <em>t</em>). Aplicando o ansatz WKB comóvel Φ(<strong>x</strong>, <em>t</em>) = <em>a</em>(<em>t</em>)<sup>−3/2</sup> Ψ(<strong>x</strong>, <em>t</em>) exp(−<em>imct</em>/ℏ), a equação parabólica CGLE emerge apenas como o <strong>envelope de modulação lenta sub-horizonte</strong>, onde a taxa de bombeamento <em>μ</em>(<em>R</em>, Σ) é alimentada pelo decaimento conservativo de <em>R</em>, mantendo ∇<sub>μ</sub>(<em>T</em><sub>Φ</sub><sup>μν</sup> + <em>T</em><sub>Σ</sub><sup>μν</sup> + <em>T</em><sub><em>R</em></sub><sup>μν</sup>) = 0 exatamente.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Ponta Solta 2 -->
-        <div class="audit-card">
-          <div class="audit-card-header">
-            <span>Objeção Crítica #2 — Instabilidade de Cisalhamento Anisotrópico BKL contra o Bounce Cosmológico</span>
-            <span class="gh-badge gh-badge-green">✓ Resolvida via Critério ρ<sub>c</sub> &gt; σ<sub>0</sub>²</span>
-          </div>
-          <div class="audit-card-body">
-            <div class="gh-callout gh-callout-red" style="margin:0;">
-              <div class="gh-callout-title">Refutação do Rascunho Preliminar</div>
-              <p style="margin:0; font-size:14px;">
-                Em qualquer universo realista com rotação ou perturbações espirais, a métrica próxima a <em>a</em> → 0 desenvolve anisotropia de cisalhamento de Belinski-Khalatnikov-Lifshitz (BKL), cuja densidade de energia cresce como +<em>σ</em><sub>0</sub>²/<em>a</em><sup>6</sup> — exatamente a mesma potência <em>a</em><sup>−6</sup> da repulsão de spin-torção (−<em>ρ<sub>c</sub></em>/<em>a</em><sup>6</sup>). Sem um vínculo estrito, o cisalhamento vence e o universo colapsa em uma singularidade caótica.
-              </p>
-            </div>
-            <div class="gh-callout gh-callout-green" style="margin:0;">
-              <div class="gh-callout-title">Correção Matemática Fechada (Argon v3.0)</div>
-              <p style="margin:0; font-size:14px;">
-                Demonstramos na Equação de Friedmann-Cartan-Bianchi que a repulsão de spin-torção domina a anisotropia BKL se e somente se a densidade crítica de correlação de spin satisfaz <strong><em>ρ<sub>c</sub></em> &gt; <em>σ</em><sub>0</sub>²</strong>. Sob essa condição, o raio mínimo do universo no bounce é estritamente positivo e dado analiticamente por <em>a</em><sub>min</sub> = √[(<em>ρ<sub>c</sub></em> − <em>σ</em><sub>0</sub>²)/<em>ρ</em><sub>0</sub>] &gt; 0, com aceleração no ponto de retorno <em>ä</em>(<em>t<sub>B</sub></em>)/<em>a</em><sub>min</sub> = (4π<em>G</em>/3)[2(<em>ρ<sub>c</sub></em> − <em>σ</em><sub>0</sub>²)/<em>a</em><sub>min</sub><sup>6</sup>] &gt; 0.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Ponta Solta 3 -->
-        <div class="audit-card">
-          <div class="audit-card-header">
-            <span>Objeção Crítica #3 — Limites do Satélite Planck 2018 sobre Oscilações Log-Periódicas no CMB</span>
-            <span class="gh-badge gh-badge-green">✓ Resolvida via Supressão UV Linear (A<sub>log</sub> ≤ 0.028)</span>
-          </div>
-          <div class="audit-card-body">
-            <div class="gh-callout gh-callout-red" style="margin:0;">
-              <div class="gh-callout-title">Refutação do Rascunho Preliminar</div>
-              <p style="margin:0; font-size:14px;">
-                Se o ciclo limite do Grupo de Renormalização operasse com amplitude de ordem unidade (<em>ρ</em><sub>*</sub> ∼ 𝒪(1)) já na época inflacionária primordial, o espectro de potência escalar <em>P</em><sub>ℛ</sub>(<em>k</em>) exibiria fortes modulações log-periódicas cos(<em>ω</em> ln(<em>k</em>/<em>k</em><sub>0</sub>)), o que é diretamente refutado pelos dados do <em>Planck 2018 (Paper X: Constraints on Inflation)</em>, que medem um espectro quase invariante <em>n<sub>s</sub></em> = 0.9649 ± 0.0042.
-              </p>
-            </div>
-            <div class="gh-callout gh-callout-green" style="margin:0;">
-              <div class="gh-callout-title">Correção Matemática Fechada (Argon v3.0)</div>
-              <p style="margin:0; font-size:14px;">
-                Introduzimos a dependência de escala na parte real do expoente crítico: α<sub>RG</sub>(ℓ) = α<sub>∞</sub> tanh((ℓ − ℓ<sub>NL</sub>)/Δℓ). No regime ultravioleta primordial (ℓ &lt; ℓ<sub>NL</sub>), α<sub>RG</sub> é quase nulo, restringindo a modulação residual no CMB a <em>A</em><sub>log</sub> = 0.012 &lt; 0.028 (compatível em 1σ com o Planck 2018). O ciclo limite macroscópico <em>ρ</em><sub>*</sub> = √α<sub>∞</sub> emerge apenas após a transição de fase não-linear infravermelha (ℓ &gt; ℓ<sub>NL</sub>, formação de estruturas dissipativas).
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Ponta Solta 4 -->
-        <div class="audit-card">
-          <div class="audit-card-header">
-            <span>Objeção Crítica #4 — Quebra da Simetria de Escala no Modelo Padrão e Hierarquia de Forças (10<sup>−40</sup>)</span>
-            <span class="gh-badge gh-badge-green">✓ Resolvida via Unificação Variacional de Beltrami-Călugăreanu</span>
-          </div>
-          <div class="audit-card-body">
-            <div class="gh-callout gh-callout-red" style="margin:0;">
-              <div class="gh-callout-title">Refutação do Rascunho Preliminar</div>
-              <p style="margin:0; font-size:14px;">
-                Átomos não são sistemas solares em miniatura e moléculas de DNA não são regidas pela gravidade (a razão entre a força gravitacional e a força de Coulomb em um átomo é <em>G m<sub>p</sub> m<sub>e</sub></em> / (<em>k<sub>e</sub> e</em>²) ≈ 4.4 × 10<sup>−40</sup>). Além disso, a anomalia de traço quântica (<em>T</em><sub>μ</sub><sup>μ</sup> = (β(<em>g</em>)/2<em>g</em>)<em>F</em><sub>μν</sub><em>F</em><sup>μν</sup> ≠ 0) quebra a invariância de escala ingênua através de massas fixas (Λ<sub>QCD</sub>, <em>m<sub>e</sub></em>).
-              </p>
-            </div>
-            <div class="gh-callout gh-callout-green" style="margin:0;">
-              <div class="gh-callout-title">Correção Matemática Fechada (Argon v3.0)</div>
-              <p style="margin:0; font-size:14px;">
-                A recorrência espiral nas 6 escalas <strong>não é uma identidade literal de forças</strong>, mas um <strong>isomorfismo variacional</strong>: em qualquer escala ℓ, independentemente de o portador da força ser o glúon (QCD), o fóton (QED/MHD) ou a métrica (gravidade), a minimização do funcional de energia livre ℱ sujeita a uma helicidade topológica conservada (δ[ℱ − <em>λ</em>ℋ] = 0) produz exatamente a equação de autovalor helicoidal de Beltrami (∇ × <strong>J</strong> = <em>λ</em><strong>J</strong>) ou a partição de Călugăreanu (Lk = Tw + Wr).
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SEÇÃO 4: ARQUITETURA MATEMÁTICA FECHADA -->
-      <section id="sec-4" class="paper-section">
-        <h2>4. Arquitetura Matemática Fechada: As 4 Leis Fundamentais e Demonstrações Analíticas</h2>
-
-        <h3>4.1. Lei I — Ação Covariante de Einstein-Cartan-Klein-Gordon e Redução WKB para a PDE CGLE-Tensão</h3>
+        <h3>Ajuste aos dados de expansão</h3>
         <p>
-          Definimos a ação total covariante na variedade de Riemann-Cartan <em>M</em> com métrica <em>g</em><sub>μν</sub> e vetor axial de contorção <em>S</em><sub>μ</sub> = (1/6)ε<sub>μνρσ</sub><em>T</em><sup>νρσ</sup>:
-        </p>
-        <div class="eq-block">
-          <div class="eq-math">
-            <em>S</em> = ∫ d<sup>4</sup><em>x</em> √(−<em>g</em>) [ −<em>R</em>/(16π<em>G</em>) + (1/2)<em>g</em><sup>μν</sup>(<em>D</em><sub>μ</sub>Φ)<sup>*</sup>(<em>D</em><sub>ν</sub>Φ) − (<em>m</em>²<em>c</em>²/2ℏ²) |Φ|² − (<em>g</em><sub>4</sub>/4) |Φ|<sup>4</sup> − (χ/2) Σ |Φ|² + ℒ<sub>Σ</sub> + ℒ<sub><em>R</em></sub> ]
-          </div>
-          <div class="eq-num">(Eq. 1)</div>
-        </div>
-        <p>
-          onde <em>D</em><sub>μ</sub> = ∂<sub>μ</sub> − <em>iqS</em><sub>μ</sub> é a derivada covariante acoplada à torção axial. Introduzindo o ansatz WKB comóvel Φ(<strong>x</strong>, <em>t</em>) = <em>a</em>(<em>t</em>)<sup>−3/2</sup> Ψ(<strong>x</strong>, <em>t</em>) exp(−<em>imct</em>/ℏ) no limite sub-horizonte e acoplando a dissipação aberta ao reservatório reciclável <em>R</em>(<strong>x</strong>, <em>t</em>), obtemos o sistema fechado de equações diferenciais parciais (PDEs) acopladas:
-        </p>
-        <div class="eq-block">
-          <div class="eq-math">
-            ∂<sub><em>t</em></sub>Ψ = (1 + <em>iα</em>) ∇²Ψ + [ <em>μ</em>(<em>R</em>) − (1 + <em>iβ</em>)|Ψ|² − (χ + <em>iγ</em>)Σ ] Ψ
-          </div>
-          <div class="eq-num">(Eq. 2)</div>
-        </div>
-        <div class="eq-block">
-          <div class="eq-math">
-            ∂<sub><em>t</em></sub>Σ = <em>D</em><sub>Σ</sub> ∇²Σ + κ |∇Ψ|² − τ<sub>Σ</sub><sup>−1</sup> Σ + η |Ψ|² Σ , &nbsp;&nbsp;&nbsp;&nbsp; ∂<sub><em>t</em></sub><em>R</em> = <em>D<sub>R</sub></em> ∇²<em>R</em> + τ<sub>Σ</sub><sup>−1</sup> Σ − <em>μ</em>(<em>R</em>)|Ψ|²
-          </div>
-          <div class="eq-num">(Eq. 3)</div>
-        </div>
-        <p>
-          Para um defeito topológico (vórtice espiral) de carga inteira <em>m</em> ∈ ℤ, o ansatz polar Ψ(<em>r</em>, φ, <em>t</em>) = <em>R</em>(<em>r</em>) exp[<em>i</em>(<em>m</em>φ − Ω<em>t</em> + ∫<sub>0</sub><sup><em>r</em></sup> <em>k</em>(<em>r'</em>) d<em>r'</em>)] implica uma seleção unívoca da frequência assintótica Ω e do número de onda radial <em>k</em><sub>∞</sub>:
-        </p>
-        <div class="eq-block">
-          <div class="eq-math">
-            Ω = <em>β μ</em><sub>eff</sub> + (<em>α</em> − <em>β</em>) <em>k</em><sub>∞</sub>² + <em>γ</em> Σ<sub>∞</sub> , &nbsp;&nbsp;&nbsp;&nbsp; <em>R</em><sub>∞</sub>² = <em>μ</em><sub>eff</sub> − <em>k</em><sub>∞</sub>² − χ Σ<sub>∞</sub> , &nbsp;&nbsp;&nbsp;&nbsp; <em>I</em><sub>BFN</sub> = 1 + <em>αβ</em>
-          </div>
-          <div class="eq-num">(Eq. 4)</div>
-        </div>
-        <p>
-          O índice de Benjamin-Feir-Newell <em>I</em><sub>BFN</sub> = 1 + <em>αβ</em> governa a transição de fase: quando 1 + <em>αβ</em> &gt; 0, o sistema forma espirais arquimedianas/logarítmicas coerentes; quando 1 + <em>αβ</em> &lt; 0, a fase sofre instabilidade modulacional e nucleia pares vórtice-antivórtice (cascata turbulenta de espirais secundárias).
+          Dados usados: <strong>13 medidas de distância do DESI DR2</strong>, <strong>1.820 supernovas do DES</strong> (recalibração Dovekie) e <strong>duas âncoras do fundo cósmico</strong>.
         </p>
 
-        <h3>4.2. Lei II — Equação de Callan-Symanzik-Hopf e Ciclo Limite do Grupo de Renormalização (DSI)</h3>
-        <p>
-          Ao variar a escala logarítmica ℓ = ln(<em>L</em>/<em>L</em><sub>0</sub>), o parâmetro de ordem complexo adimensional <em>Z</em>(ℓ) = <em>X</em>(ℓ) + <em>iY</em>(ℓ) = <em>ρ</em>(ℓ) exp(<em>iΘ</em>(ℓ)) evolui segundo a forma normal de Poincaré-Andronov-Hopf da função beta do Grupo de Renormalização:
-        </p>
-        <div class="eq-block">
-          <div class="eq-math">
-            ∂<sub>ℓ</sub><em>Z</em> = β<sub>RG</sub>(<em>Z</em>) = ( α<sub>RG</sub>(ℓ) + <em>iω</em> ) <em>Z</em> − ( 1 + <em>iσ</em> ) |<em>Z</em>|² <em>Z</em>
-          </div>
-          <div class="eq-num">(Eq. 5)</div>
-        </div>
-        <p>
-          Separando módulo e fase em coordenadas polares, obtemos o sistema exato:
-        </p>
-        <div class="eq-block">
-          <div class="eq-math">
-            d<em>ρ</em>/dℓ = <em>ρ</em> ( α<sub>RG</sub> − <em>ρ</em>² ) , &nbsp;&nbsp;&nbsp;&nbsp; d<em>Θ</em>/dℓ = <em>ω</em> − <em>σ ρ</em>²
-          </div>
-          <div class="eq-num">(Eq. 6)</div>
-        </div>
-        <p>
-          Para α<sub>RG</sub> &gt; 0 constante no regime infravermelho (ℓ &gt; ℓ<sub>NL</sub>), a integração analítica fechada de (Eq. 6) produz a solução exata:
-        </p>
-        <div class="eq-block">
-          <div class="eq-math">
-            <em>ρ</em>(ℓ) = √α<sub>RG</sub> / √[ 1 + (α<sub>RG</sub>/<em>ρ</em><sub>0</sub>² − 1) exp(−2α<sub>RG</sub>ℓ) ] &nbsp;&nbsp;⎯⎯<sup>ℓ → ∞</sup>⎯⎯&gt;&nbsp;&nbsp; <em>ρ</em><sub>*</sub> = √α<sub>RG</sub>
-          </div>
-          <div class="eq-num">(Eq. 7)</div>
-        </div>
-        <div class="eq-block">
-          <div class="eq-math">
-            <em>Θ</em>(ℓ) = <em>Θ</em><sub>0</sub> + <em>ω</em>ℓ − (<em>σ</em>/2) ln[ 1 + (<em>ρ</em><sub>0</sub>²/α<sub>RG</sub>)(exp(2α<sub>RG</sub>ℓ) − 1) ] , &nbsp;&nbsp;&nbsp;&nbsp; <em>λ</em><sub>*</sub> = <em>L</em><sub><em>n</em>+1</sub>/<em>L<sub>n</sub></em> = exp( 2π / <em>ω</em><sub>eff</sub> )
-          </div>
-          <div class="eq-num">(Eq. 8)</div>
-        </div>
-        <p>
-          onde <em>ω</em><sub>eff</sub> = <em>ω</em> − <em>σ</em>α<sub>RG</sub> é a frequência log-periódica renormalizada. Isso demonstra rigorosamente que a auto-semelhança entre escalas não é contínua, mas obedece à <strong>Invariância Discreta de Escala (DSI)</strong> com passo multiplicativo <em>λ</em><sub>*</sub> = exp(2π/<em>ω</em><sub>eff</sub>).
-        </p>
-
-        <h3>4.3. Lei III — Fechamento Topológico Ouroboros: Fibrilação de Hopf S³ e Bounce de Einstein-Cartan-Bianchi</h3>
-        <p>
-          O fechamento espacial sem borda é realizado pela 3-esfera unitária <em>S</em>³ = { (<em>w</em>, <em>z</em>) ∈ ℂ² : |<em>w</em>|² + |<em>z</em>|² = 1 }, ∂<em>S</em>³ = ∅. Parametrizando <em>w</em> = cos(<em>η</em>) exp(<em>i</em>(<em>ξ</em><sub>1</sub> + <em>ξ</em><sub>2</sub>)), <em>z</em> = sin(<em>η</em>) exp(<em>i</em>(<em>ξ</em><sub>1</sub> − <em>ξ</em><sub>2</sub>)), o mapa de Hopf π : <em>S</em>³ → <em>S</em>² projeta fibras circulares <em>S</em>¹ mutuamente entrelaçadas com invariante de Hopf <em>H</em>(π) = 1. A projeção estereográfica para ℝ³ fornece as curvas toroidais fechadas:
-        </p>
-        <div class="eq-block">
-          <div class="eq-math">
-            <strong>r</strong><sub>Hopf</sub>(<em>η</em>, <em>ξ</em><sub>1</sub>, <em>ξ</em><sub>2</sub>) = [ 1 − sin(<em>η</em>) sin(<em>ξ</em><sub>1</sub> − <em>ξ</em><sub>2</sub>) ]<sup>−1</sup> ( cos(<em>η</em>) cos(<em>ξ</em><sub>1</sub> + <em>ξ</em><sub>2</sub>), cos(<em>η</em>) sin(<em>ξ</em><sub>1</sub> + <em>ξ</em><sub>2</sub>), sin(<em>η</em>) cos(<em>ξ</em><sub>1</sub> − <em>ξ</em><sub>2</sub>) )
-          </div>
-          <div class="eq-num">(Eq. 9)</div>
-        </div>
-        <p>
-          Na evolução temporal cosmológica, incorporando curvatura positiva <em>k</em> = +1, radiação/matéria <em>ρ</em>(<em>a</em>), cisalhamento anisotrópico de Bianchi <em>σ</em>²(<em>a</em>) = <em>σ</em><sub>0</sub>²<em>a</em><sup>−6</sup> e repulsão de spin-torção de Einstein-Cartan −<em>ρ<sub>c</sub>a</em><sup>−6</sup>, obtemos a Equação de Friedmann-Cartan-Bianchi:
-        </p>
-        <div class="eq-block">
-          <div class="eq-math">
-            <em>H</em>² = (<em>ȧ</em> / <em>a</em>)² = (8π<em>G</em> / 3) [ <em>ρ</em><sub>0</sub> <em>a</em><sup>−4</sup> − (<em>ρ<sub>c</sub></em> − <em>σ</em><sub>0</sub>²) <em>a</em><sup>−6</sup> + <em>ρ</em><sub>Λ</sub> ] − <em>c</em>² / (<em>R</em><sub>0</sub>² <em>a</em>²)
-          </div>
-          <div class="eq-num">(Eq. 10)</div>
-        </div>
-        <p>
-          Impondo <em>ρ<sub>c</sub></em> &gt; <em>σ</em><sub>0</sub>² e integrando exatamente em tempo conforme d<em>τ</em> = d<em>t</em>/<em>a</em>(<em>t</em>) nas vizinhanças do bounce (onde os termos <em>a</em><sup>−4</sup> e <em>a</em><sup>−6</sup> dominam), obtemos a trajetória analítica livre de singularidades:
-        </p>
-        <div class="eq-block">
-          <div class="eq-math">
-            <em>a</em>(<em>τ</em>) = <em>a</em><sub>min</sub> √( 1 + <em>ω<sub>B</sub></em>² <em>τ</em>² ) , &nbsp;&nbsp;&nbsp;&nbsp; <em>t</em>(<em>τ</em>) = <em>a</em><sub>min</sub> [ (<em>τ</em>/2)√(1 + <em>ω<sub>B</sub></em>²<em>τ</em>²) + (2<em>ω<sub>B</sub></em>)<sup>−1</sup> arcsinh(<em>ω<sub>B</sub>τ</em>) ]
-          </div>
-          <div class="eq-num">(Eq. 11)</div>
-        </div>
-        <div class="eq-block">
-          <div class="eq-math">
-            <em>a</em><sub>min</sub> = √[ (<em>ρ<sub>c</sub></em> − <em>σ</em><sub>0</sub>²) / <em>ρ</em><sub>0</sub> ] &gt; 0 , &nbsp;&nbsp;&nbsp;&nbsp; <em>R</em><sub>max</sub> = 6 (<em>H</em>² + <em>ä</em>/<em>a</em> + <em>k</em>/<em>a</em>²)<sub><em>τ</em>=0</sub> &lt; ∞
-          </div>
-          <div class="eq-num">(Eq. 12)</div>
+        <div class="gh-table-wrap">
+          <table class="gh-table">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th>Parâmetros extras</th>
+                <th>Δχ² contra o padrão</th>
+                <th>Significância</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Padrão (ΛCDM)</strong></td>
+                <td>0</td>
+                <td class="mono">0</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><strong>Fórmula empírica w₀–w<sub>a</sub></strong></td>
+                <td>2</td>
+                <td class="mono">−12,5</td>
+                <td><span class="gh-badge gh-badge-blue">3,1σ</span></td>
+              </tr>
+              <tr>
+                <td><strong>Só o campo, sem acoplamento (H)</strong></td>
+                <td>1</td>
+                <td class="mono">−3,0</td>
+                <td><span class="gh-badge">fraca</span></td>
+              </tr>
+              <tr>
+                <td><strong>Campo acoplado (G)</strong></td>
+                <td>2</td>
+                <td class="mono"><strong>−13,5</strong></td>
+                <td><span class="gh-badge gh-badge-green"><strong>3,2σ</strong></span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <h3>4.4. Lei IV — Princípio Variacional Unificado de Helicidade Topológica (Beltrami &amp; Călugăreanu-White-Fuller)</h3>
         <p>
-          Para qualquer campo vetorial solenoidal <strong>B</strong> = ∇ × <strong>A</strong> (∇ · <strong>B</strong> = 0) em um volume <em>V</em> — seja um campo magnético astrofísico em Laniakea/Via Láctea/Espiral de Parker, um campo de vorticidade hidrodinâmica ou um tubo de fluxo de cor cromodinâmico — definimos a energia livre ℰ = (1/2) ∫<sub><em>V</em></sub> |<strong>B</strong>|² d<em>V</em> e a helicidade topológica de Hopf-Moffatt ℋ = ∫<sub><em>V</em></sub> <strong>A</strong> · <strong>B</strong> d<em>V</em>. A minimização variacional com multiplicador de Lagrange <em>λ</em> fornece:
-        </p>
-        <div class="eq-block">
-          <div class="eq-math">
-            δ ( ℰ − (<em>λ</em>/2) ℋ ) = ∫<sub><em>V</em></sub> ( ∇ × <strong>B</strong> − <em>λ</em> <strong>B</strong> ) · δ<strong>A</strong> d<em>V</em> = 0 &nbsp;&nbsp;⟹&nbsp;&nbsp; ∇ × <strong>B</strong> = <em>λ</em> <strong>B</strong> &nbsp;&nbsp;⟹&nbsp;&nbsp; (∇² + <em>λ</em>²) <strong>B</strong> = 0
-          </div>
-          <div class="eq-num">(Eq. 13)</div>
-        </div>
-        <p>
-          As autofunções de (Eq. 13) em geometria cilíndrica/toroidal são <strong>campos helicoidais livres de força de Beltrami</strong> (<strong>J</strong> × <strong>B</strong> = 0). De modo dual, para filamentos quirais finos e fitas moleculares fechadas (como o B-DNA sob estresse torcional na escala biológica), a helicidade reduz-se ao <strong>Teorema Topológico de Călugăreanu-White-Fuller</strong>:
-        </p>
-        <div class="eq-block">
-          <div class="eq-math">
-            Lk = Tw + Wr = constante , &nbsp;&nbsp;&nbsp;&nbsp; Wr = (1 / 4π) ∮<sub><em>C</em></sub> ∮<sub><em>C</em></sub> [ (d<strong>r</strong><sub>1</sub> × d<strong>r</strong><sub>2</sub>) · (<strong>r</strong><sub>1</sub> − <strong>r</strong><sub>2</sub>) ] / |<strong>r</strong><sub>1</sub> − <strong>r</strong><sub>2</sub>|³
-          </div>
-          <div class="eq-num">(Eq. 14)</div>
-        </div>
-        <p>
-          Minimizando a energia elástica de Kirchhoff-Clebsch ℰ<sub>el</sub> = (<em>A<sub>b</sub></em>/2) ∫ κ² d<em>s</em> + (<em>C<sub>t</sub></em>/2) ∫ (ω<sub>3</sub> − ω<sub>0</sub>)² d<em>s</em> para ΔLk ≠ 0, a fita sofre uma instabilidade de flambagem helicoidal quando o torque excede o limiar crítico τ<sub>crit</sub> = √(2 <em>A<sub>b</sub> F</em>), convertendo excesso de torção local (ΔTw) em super-enrolamento espacial global (<em>writhe</em> plectonêmico ou solenoidal ΔWr).
+          <strong>Melhor ajuste do modelo G:</strong> massa do campo <code>m = 0,79 H₀</code> e acoplamento <code>b = 0,062 ± 0,010</code>.
         </p>
 
-        <!-- Gráficos Matemáticos SVG das 4 Leis -->
-        <h3>4.5. Diagramas Analíticos e Perfis Numéricos das 4 Leis</h3>
+        <h3>O que sai desses valores sem ajuste novo</h3>
+        <div class="gh-table-wrap">
+          <table class="gh-table">
+            <thead>
+              <tr>
+                <th>Grandeza</th>
+                <th>Modelo</th>
+                <th>Medido</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Densidade de matéria aparente</strong></td>
+                <td class="mono">0,315</td>
+                <td><code>0,319 ± 0,006</code> (DESI)</td>
+              </tr>
+              <tr>
+                <td><strong>S₈ (amplitude das estruturas)</strong></td>
+                <td class="mono">0,813</td>
+                <td><code>0,789 ± 0,012</code> (DES Y6); padrão prevê <code>0,836</code></td>
+              </tr>
+              <tr>
+                <td><strong>Matéria escura perdida desde a recombinação</strong></td>
+                <td class="mono">5%</td>
+                <td>sem medida direta</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Visualização Gráfica dos Dados Testados -->
         <div class="figures-grid">
           <div class="figure-card">
-            <svg viewBox="0 0 360 180" aria-label="Gráfico do Ciclo Limite RG">
-              <line x1="35" y1="150" x2="340" y2="150" stroke="#8b949e" stroke-width="1" />
-              <line x1="35" y1="20" x2="35" y2="150" stroke="#8b949e" stroke-width="1" />
-              <line x1="145" y1="20" x2="145" y2="150" stroke="#cf222e" stroke-dasharray="4 3" stroke-width="1" />
-              <text x="150" y="32" font-size="9.5" fill="#cf222e" font-family="monospace">ℓ_NL (Limiar IR)</text>
-              <!-- Envelope rho(l) -->
-              <path d="M 35 142 C 80 141, 120 138, 145 125 C 175 95, 200 50, 340 46" fill="none" stroke="#1a7f37" stroke-width="2" />
-              <!-- Oscilação log-periódica Re(Z(l)) -->
-              <path d="M 35 145 Q 60 142 85 146 T 135 143 Q 155 110 170 70 T 200 130 T 230 50 T 260 135 T 290 48 T 320 135 L 340 65" fill="none" stroke="#0969da" stroke-width="1.8" />
-              <text x="42" y="132" font-size="9.5" fill="#59636e" font-family="monospace">UV Linear (Planck: A_log ≤ 0.028)</text>
-              <text x="215" y="38" font-size="9.5" fill="#1a7f37" font-family="monospace">ρ* = √α_RG = 0.8062</text>
-              <text x="250" y="168" font-size="10" fill="#59636e" font-family="monospace">Escala ℓ = ln(L/L₀) →</text>
+            <svg viewBox="0 0 360 180" aria-label="Comparação de Δχ² contra o ΛCDM">
+              <line x1="45" y1="30" x2="45" y2="150" stroke="#8b949e" stroke-width="1" />
+              <line x1="45" y1="30" x2="340" y2="30" stroke="#8b949e" stroke-width="1" />
+              <!-- Barras de Δχ² -->
+              <rect x="65" y="30" width="48" height="4" fill="#656d76" />
+              <text x="72" y="48" font-size="9.5" fill="#59636e" font-family="monospace">ΛCDM (0)</text>
+
+              <rect x="135" y="30" width="48" height="24" fill="#9a6700" rx="2" />
+              <text x="132" y="68" font-size="9.5" fill="#9a6700" font-family="monospace">Campo H (−3,0)</text>
+
+              <rect x="205" y="30" width="48" height="100" fill="#0969da" rx="2" />
+              <text x="198" y="144" font-size="9.5" fill="#0969da" font-family="monospace">w₀–w_a (−12,5)</text>
+
+              <rect x="275" y="30" width="48" height="108" fill="#1a7f37" rx="2" />
+              <text x="266" y="152" font-size="9.5" fill="#1a7f37" font-weight="bold" font-family="monospace">Modelo G (−13,5)</text>
+
+              <text x="52" y="168" font-size="10" fill="#59636e" font-family="monospace">DESI DR2 + DES Dovekie (1.820 SNe) + CMB</text>
             </svg>
             <div class="figure-caption">
-              <strong>Figura 1 — Transição UV/IR e Ciclo Limite RG (Eq. 7–8):</strong> Supressão linear primordial para ℓ &lt; ℓ<sub>NL</sub> compatível com o <em>Planck 2018</em> e emergência da oscilação log-periódica com razão discreta <em>λ</em><sub>*</sub> = exp(2π/<em>ω</em>) = 6.3096 no regime dissipativo.
+              <strong>Figura 1 — Ajuste aos dados de distância (Δχ² contra ΛCDM):</strong> O modelo de campo acoplado à matéria escura (G, com <code>m = 0,79 H₀</code> e <code>b = 0,062</code>) atinge Δχ² = −13,5 (3,2σ), superando o campo sem acoplamento (H) e o ajuste empírico w₀–w<sub>a</sub>.
             </div>
           </div>
 
           <div class="figure-card">
-            <svg viewBox="0 0 360 180" aria-label="Gráfico do Bounce de Einstein-Cartan-Bianchi">
-              <line x1="35" y1="150" x2="340" y2="150" stroke="#8b949e" stroke-width="1" />
-              <line x1="188" y1="18" x2="188" y2="155" stroke="#8b949e" stroke-dasharray="3 3" stroke-width="1" />
-              <!-- Singularidade GR Clássica -->
-              <path d="M 55 25 Q 150 90 188 150 Q 226 90 321 25" fill="none" stroke="#cf222e" stroke-dasharray="4 3" stroke-width="1.6" />
-              <!-- Bounce Não-Singular Cartan-Bianchi -->
-              <path d="M 55 25 C 125 82, 155 112, 188 112 C 221 112, 251 82, 321 25" fill="none" stroke="#0969da" stroke-width="2.4" />
-              <circle cx="188" cy="112" r="4" fill="#1a7f37" />
-              <text x="196" y="110" font-size="9.5" fill="#1a7f37" font-family="monospace">a_min = √[(ρ_c - σ₀²)/ρ₀] = 0.50</text>
-              <text x="62" y="142" font-size="9.5" fill="#cf222e" font-family="monospace">GR Clássica (a → 0)</text>
-              <text x="148" y="168" font-size="10" fill="#59636e" font-family="monospace">Tempo Conforme τ →</text>
-            </svg>
-            <div class="figure-caption">
-              <strong>Figura 2 — Bounce Não-Singular de Einstein-Cartan-Bianchi (Eq. 10–12):</strong> Enquanto a Relatividade Geral sem torção colapsa em <em>a</em> = 0 (tracejado vermelho), a condição <em>ρ<sub>c</sub></em> (0.34) &gt; <em>σ</em><sub>0</sub>² (0.09) garante um ponto de retorno suave em <em>a</em><sub>min</sub> = 0.5000.
-            </div>
-          </div>
+            <svg viewBox="0 0 360 180" aria-label="Tensão em S₈ e Posição do Modelo G">
+              <line x1="40" y1="140" x2="335" y2="140" stroke="#8b949e" stroke-width="1" />
+              <!-- DES Y6: 0.789 ± 0.012 -->
+              <line x1="85" y1="95" x2="145" y2="95" stroke="#0969da" stroke-width="3" />
+              <circle cx="115" cy="95" r="5" fill="#0969da" />
+              <text x="72" y="80" font-size="9.5" fill="#0969da" font-family="monospace">DES Y6 (0,789 ± 0,012)</text>
 
-          <div class="figure-card">
-            <svg viewBox="0 0 360 180" aria-label="Perfil Radial do Vórtice CGLE-Tensão">
-              <line x1="35" y1="150" x2="340" y2="150" stroke="#8b949e" stroke-width="1" />
-              <line x1="35" y1="20" x2="35" y2="150" stroke="#8b949e" stroke-width="1" />
-              <!-- Módulo |Psi(r)| -->
-              <path d="M 35 150 C 55 95, 85 52, 135 46 L 335 45" fill="none" stroke="#0969da" stroke-width="2.2" />
-              <!-- Tensão Sigma(r) -->
-              <path d="M 35 42 C 65 45, 95 118, 155 136 L 335 140" fill="none" stroke="#cf222e" stroke-width="2.0" />
-              <text x="195" y="38" font-size="9.5" fill="#0969da" font-family="monospace">|Ψ(r)| → R_∞ = 0.9577</text>
-              <text x="72" y="75" font-size="9.5" fill="#cf222e" font-family="monospace">Pico de Tensão Σ(r) no Núcleo</text>
-              <text x="235" y="168" font-size="10" fill="#59636e" font-family="monospace">Raio r ao redor do Defeito →</text>
-            </svg>
-            <div class="figure-caption">
-              <strong>Figura 3 — Estrutura Radial do Defeito Topológico (Eq. 2–4):</strong> No núcleo do vórtice espiral (<em>r</em> → 0), a amplitude |Ψ| vai a zero enquanto o gradiente de fase concentra um pico de tensão Σ<sub>max</sub> = 0.3762 que emite trens de ondas espirais.
-            </div>
-          </div>
+              <!-- Modelo G: 0.813 -->
+              <circle cx="205" cy="65" r="6" fill="#1a7f37" />
+              <line x1="205" y1="65" x2="205" y2="140" stroke="#1a7f37" stroke-dasharray="3 3" stroke-width="1.2" />
+              <text x="155" y="52" font-size="9.5" fill="#1a7f37" font-weight="bold" font-family="monospace">Modelo G: S₈ = 0,813</text>
 
-          <div class="figure-card">
-            <svg viewBox="0 0 360 180" aria-label="Partição Topológica de Călugăreanu Lk = Tw + Wr">
-              <line x1="35" y1="150" x2="340" y2="150" stroke="#8b949e" stroke-width="1" />
-              <line x1="35" y1="20" x2="35" y2="150" stroke="#8b949e" stroke-width="1" />
-              <!-- Lk constante -->
-              <line x1="35" y1="40" x2="335" y2="40" stroke="#1a7f37" stroke-width="2.2" />
-              <!-- Tw decaindo após flambagem -->
-              <path d="M 35 150 L 125 82 L 335 82" fill="none" stroke="#0969da" stroke-width="2" />
-              <!-- Wr crescendo após flambagem -->
-              <path d="M 35 150 L 125 150 L 335 108" fill="none" stroke="#8250df" stroke-width="2" />
-              <text x="210" y="33" font-size="9.5" fill="#1a7f37" font-family="monospace">Lk = Tw + Wr = 10.0 (Conservado)</text>
-              <text x="215" y="76" font-size="9.5" fill="#0969da" font-family="monospace">Twist (Tw = 6.157)</text>
-              <text x="215" y="124" font-size="9.5" fill="#8250df" font-family="monospace">Writhe Supercoil (Wr = 3.843)</text>
-              <text x="180" y="168" font-size="10" fill="#59636e" font-family="monospace">Torque Torcional Aplicado τ →</text>
+              <!-- ΛCDM: 0.836 -->
+              <circle cx="290" cy="95" r="5" fill="#cf222e" />
+              <text x="242" y="80" font-size="9.5" fill="#cf222e" font-family="monospace">Padrão ΛCDM (0,836)</text>
+
+              <text x="115" y="165" font-size="10" fill="#59636e" font-family="monospace">Amplitude de estruturas S₈ →</text>
             </svg>
             <div class="figure-caption">
-              <strong>Figura 4 — Partição Topológica de Călugăreanu-White-Fuller (Eq. 14):</strong> Acima do torque crítico τ<sub>crit</sub> = √(2<em>A<sub>b</sub>F</em>), o excesso de torção local converte-se em <em>writhe</em> tridimensional (super-hélice), mantendo Lk = Tw + Wr exatamente constante (erro 0.000e+00).
+              <strong>Figura 2 — Previsão sem ajuste novo para S₈:</strong> A perda de 5% da matéria escura desde a recombinação reduz a amplitude prevista de <code>0,836</code> (ΛCDM) para <code>0,813</code>, na direção da medida do DES Year 6 (<code>0,789 ± 0,012</code>).
             </div>
           </div>
         </div>
+
+        <h3>Testes da divisão em vórtices</h3>
+        <div class="gh-table-wrap">
+          <table class="gh-table">
+            <thead>
+              <tr>
+                <th>Teste</th>
+                <th>O que a ideia prevê</th>
+                <th>O que os dados dizem</th>
+                <th>Veredito</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Núcleo de vórtice dentro do horizonte</strong></td>
+                <td>Rotação da polarização variando pelo menos 0,64° pelo céu</td>
+                <td>Limite de 0,033 grau², cerca de 0,18°</td>
+                <td><span class="gh-badge gh-badge-red">Excluído</span></td>
+              </tr>
+              <tr>
+                <td><strong>Peso gravitacional do vórtice</strong></td>
+                <td>Tensão Gμ de pelo menos 0,14</td>
+                <td>Limites da ordem de 10⁻⁷ (valor de memória)</td>
+                <td><span class="gh-badge gh-badge-red">Excluído</span></td>
+              </tr>
+              <tr>
+                <td><strong>Hierarquia de escalas</strong></td>
+                <td>Oscilações log-periódicas no fundo cósmico</td>
+                <td>Não observadas</td>
+                <td><span class="gh-badge gh-badge-amber">Sem apoio</span></td>
+              </tr>
+              <tr>
+                <td><strong>Rotação global (não afirmada pelo conceito)</strong></td>
+                <td>—</td>
+                <td>(ω/H)₀ &lt; 7,6 × 10⁻¹⁰</td>
+                <td><span class="gh-badge">Nulo</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          O campo que explica a energia escura tem escala próxima da massa de Planck. Um vórtice dele seria gravitacionalmente enorme, e por isso <strong>nenhum pode existir dentro do universo observável</strong>.
+        </p>
+
+        <h3>Anomalia aberta que combina com o conceito</h3>
+        <p>
+          A distribuição de quasares e rádio-galáxias mostra um dipolo cerca de duas vezes maior que o esperado, com significância entre <strong>3,3σ e 5,1σ</strong> conforme a análise. Pode ser lido como a nossa região participando de um movimento maior. O modelo não calcula esse efeito; é <strong>interpretação, não previsão</strong>.
+        </p>
       </section>
 
-      <!-- SEÇÃO 5: TABELA DE UNIFICAÇÃO VARIACIONAL NAS 6 ESCALAS -->
-      <section id="sec-5" class="paper-section">
-        <h2>5. Síntese Variacional através das 6 Escalas da Natureza (10<sup>−10</sup> m a &gt; 10<sup>27</sup> m)</h2>
+      <!-- PREVISÕES E CRITÉRIOS DE REFUTAÇÃO -->
+      <section id="sec-previsoes" class="paper-section">
+        <h2>Previsões e critérios de refutação</h2>
         <p>
-          A tabela abaixo sintetiza como o <strong>Princípio Variacional de Helicidade Fixa</strong> (Eq. 13–14) e a <strong>PDE CGLE-Tensão</strong> (Eq. 2–3) operam em cada uma das 6 escalas representadas no visualizador 3D, identificando a interação dominante real, o invariante conservado e a equação diferencial governante. Cada escala possui um botão direto para inspeção 3D isolada.
+          Com <code>m</code> e <code>b</code> fixados pelo ajuste, o modelo <strong>G + J</strong> faz quatro previsões que podem derrubá-lo.
         </p>
 
         <div class="gh-table-wrap">
           <table class="gh-table">
             <thead>
               <tr>
-                <th>Escala &amp; Dimensão</th>
-                <th>Interação Dominante Real</th>
-                <th>Invariante Topológico / Variacional</th>
-                <th>Equação Governante Efetiva</th>
-                <th>Estrutura Espiral / Helicoidal Emergente</th>
-                <th class="no-print">Inspeção 3D</th>
+                <th>Previsão</th>
+                <th>Valor</th>
+                <th>Quem testa</th>
+                <th>Refutado se</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>1. Multiverso &amp; Campo Primordial</strong><br><span class="mono">&gt; 10<sup>27</sup> m (ℓ → +∞)</span></td>
-                <td>Gravidade de Einstein-Cartan + Torção Axial <em>S</em><sub>μ</sub></td>
-                <td>Invariante de Hopf <em>H</em>(π) = 1 em <em>S</em>³ (∂<em>S</em>³ = ∅) &amp; Repulsão <em>ρ<sub>c</sub></em> &gt; <em>σ</em><sub>0</sub>²</td>
-                <td>PDE CGLE-Tensão (Eq. 2–3) + Bounce de Cartan-Bianchi (Eq. 10)</td>
-                <td>Fibrilação de Hopf <em>S</em>³ → ℝ³, ciclo limite RG (<em>λ</em><sub>*</sub> = 6.31) e nucleação de universos-bolha nos nós de tensão Σ.</td>
-                <td class="no-print"><a href="./?scale=0" class="gh-btn">▶ Ver 3D</a></td>
+                <td><strong>Rotação da polarização na reionização</strong></td>
+                <td class="mono">0,14° (metade do valor na recombinação)</td>
+                <td>Missões de polarização em céu inteiro, como a LiteBIRD</td>
+                <td>A razão for próxima de 1 ou de 0</td>
               </tr>
               <tr>
-                <td><strong>2. Universo Observável (Teia Cósmica)</strong><br><span class="mono">~ 10<sup>26</sup> m (Laniakea)</span></td>
-                <td>Gravitação Relativística + MHD Intergaláctica</td>
-                <td>Torque de Maré de Peebles (<strong>J</strong> ∝ ε<sub><em>ijk</em></sub><em>T<sub>jl</sub>I<sub>lk</sub></em>) + Helicidade ℋ<sub>M</sub></td>
-                <td>Vlasov-Poisson Comóvel + Relaxação de Beltrami ∇ × <strong>B</strong> = <em>λ</em><strong>B</strong></td>
-                <td>Filamentos tubulares helicoidais livres de força conectando superaglomerados ao Grande Atrator.</td>
-                <td class="no-print"><a href="./?scale=1" class="gh-btn">▶ Ver 3D</a></td>
+                <td><strong>Rotação em fontes a z ≈ 1</strong></td>
+                <td class="mono">0,08°</td>
+                <td>Levantamentos de rádio-galáxias polarizadas</td>
+                <td>For compatível com zero com erro abaixo de 0,03°</td>
               </tr>
               <tr>
-                <td><strong>3. Galáxias (Via Láctea &amp; Sgr A*)</strong><br><span class="mono">~ 10<sup>21</sup> m (100.000 al)</span></td>
-                <td>Potencial Gravitacional Autogravitante + Frame-Dragging de Kerr</td>
-                <td>Ação de Onda de Densidade de Lin-Shu + Fluxo de Blandford-Znajek</td>
-                <td>Relação de Dispersão κ² − <em>m</em>²(Ω − Ω<sub><em>p</em></sub>)² + 2π<em>GΣ</em><sub>0</sub>|<em>k</em>| = <em>c<sub>s</sub></em>²<em>k</em>²</td>
-                <td>Buraco Negro Sgr A* (sombra + anel de fótons + lente de Kerr + jatos polares de Beltrami) e 4 braços espirais logarítmicos.</td>
-                <td class="no-print"><a href="./?scale=2" class="gh-btn gh-btn-accent">🌌 Ver Sgr A* 3D</a></td>
+                <td><strong>Energia escura no DESI de 5 anos</strong></td>
+                <td class="mono">w₀ ≈ −0,84 e w<sub>a</sub> ≈ −0,52 aparentes, com matéria 0,315</td>
+                <td>DESI, resultados previstos para 2027</td>
+                <td>A preferência por evolução desaparecer, ou exigir evolução muito mais forte</td>
               </tr>
               <tr>
-                <td><strong>4. Sistema Solar Helicoidal</strong><br><span class="mono">~ 10<sup>12</sup> m (Heliosfera)</span></td>
-                <td>Gravidade Kepleriana + Vento Solar MHD Congelado</td>
-                <td>Vetor de Runge-Lenz <strong>A</strong><sub>RL</sub> + Fluxo Magnético de Parker</td>
-                <td><em>B<sub>r</sub></em> ∝ <em>r</em><sup>−2</sup>, <em>B</em><sub>φ</sub> = −<em>B</em><sub>0</sub>(<em>r</em><sub>0</sub>²Ω<sub>⊙</sub>/<em>v<sub>sw</sub>r</em>) sin θ</td>
-                <td>Espiral interplanetária de Parker, folha de corrente heliosférica ondulada e linhas de mundo helicoidais dos 8 planetas (<em>v</em><sub>⊙</sub> ≈ 220 km/s).</td>
-                <td class="no-print"><a href="./?scale=3" class="gh-btn">▶ Ver 3D</a></td>
-              </tr>
-              <tr>
-                <td><strong>5. Matéria &amp; Campos Quânticos</strong><br><span class="mono">10<sup>−10</sup> a 10<sup>−15</sup> m</span></td>
-                <td>Cromodinâmica Quântica (SU(3)<sub>c</sub>) &amp; Eletrodinâmica (U(1)<sub>em</sub>)</td>
-                <td>Quantização de Dirac ∮ ∇<em>S</em> · d<strong>l</strong> = 2π<em>m</em>ℏ + Número de Enlace de Nó (<em>p</em>, <em>q</em>)</td>
-                <td>Equação de Dirac-Coulomb + Corda de Nambu-Goto em Junção-Y</td>
-                <td>Nuvens de corrente de probabilidade azimutal <em>j</em><sub>φ</sub> ∝ <em>m</em>ℏ/(<em>m<sub>e</sub>r</em> sin θ)|ψ|², nós toroidais (<em>p</em>, <em>q</em>) e tubos de glúons entre 3 quarks.</td>
-                <td class="no-print"><a href="./?scale=4" class="gh-btn">▶ Ver 3D</a></td>
-              </tr>
-              <tr>
-                <td><strong>6. Biologia &amp; Vida (DNA &amp; Filotaxia)</strong><br><span class="mono">10<sup>−9</sup> a 10<sup>−2</sup> m</span></td>
-                <td>Eletrostática em Solvente Aquoso + Elasticidade de Kirchhoff</td>
-                <td>Teorema de Călugăreanu-White-Fuller Lk = Tw + Wr = const</td>
-                <td>Equação de Kirchhoff-Clebsch + Reação-Difusão de Turing</td>
-                <td>Dupla-hélice de B-DNA (sulco maior e menor), super-enrolamento plectonêmico/toroidal e filotaxia áurea (137.508°).</td>
-                <td class="no-print"><a href="./?scale=5" class="gh-btn">▶ Ver 3D</a></td>
+                <td><strong>Amplitude das estruturas</strong></td>
+                <td class="mono">S₈ = 0,813</td>
+                <td>DES, KiDS, Euclid, Rubin</td>
+                <td>S₈ convergir para 0,79 ou menos, ou para 0,836</td>
               </tr>
             </tbody>
           </table>
         </div>
+
+        <div class="gh-callout gh-callout-amber">
+          <p style="margin:0;">
+            <strong>Quinto teste decisivo (pendente):</strong> Calcular o espectro completo do fundo cósmico com o acoplamento <code>b = 0,062</code>. Esse valor está perto do limite permitido para esse tipo de modelo.<br><br>
+            As afirmações 1, 2 e 3 não têm hoje nenhuma previsão testável. O único rastro possível de regiões vizinhas seria uma variação minúscula da rotação da polarização pelo céu, muito abaixo do alcance atual.
+          </p>
+        </div>
       </section>
 
-      <!-- SEÇÃO 6: METODOLOGIA NUMÉRICA & VALIDAÇÃO COMPUTACIONAL -->
-      <section id="sec-6" class="paper-section">
-        <h2>6. Metodologia Numérica e Validação Computacional de Alta Precisão</h2>
+      <!-- O QUE FOI RETIRADO DA VERSÃO ORIGINAL -->
+      <section id="sec-retirado" class="paper-section">
+        <h2>O que foi retirado da versão original</h2>
+        <div class="gh-table-wrap">
+          <table class="gh-table">
+            <thead>
+              <tr>
+                <th>Elemento do artigo original</th>
+                <th>Motivo da retirada</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>O título "teorema" e a "revisão por pares"</strong></td>
+                <td>Nada foi demonstrado, e a revisão era do próprio autor</td>
+              </tr>
+              <tr>
+                <td><strong>Derivação da equação de Ginzburg-Landau a partir de uma ação</strong></td>
+                <td>Uma ação conservativa não gera termos dissipativos</td>
+              </tr>
+              <tr>
+                <td><strong>Reservatório reciclável em ciclo fechado</strong></td>
+                <td>Um sistema fechado relaxa ao equilíbrio; os dados pedem fluxo no sentido contrário ao do artigo</td>
+              </tr>
+              <tr>
+                <td><strong>Bounce por torção, universo cíclico e geometria S³</strong></td>
+                <td>Sem evidência; os dados são compatíveis com universo plano em expansão contínua</td>
+              </tr>
+              <tr>
+                <td><strong>Ciclo limite do grupo de renormalização</strong></td>
+                <td>A função de transição era escolhida à mão para escapar do limite do Planck</td>
+              </tr>
+              <tr>
+                <td><strong>Um mecanismo único para espirais em seis escalas</strong></td>
+                <td>Cada escala tem causa própria: ondas de densidade em galáxias, química no DNA, rotação e vento na espiral solar</td>
+              </tr>
+              <tr>
+                <td><strong>Validação numérica</strong></td>
+                <td>Testava o código contra a própria fórmula, não contra observações</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <p>
-          Todas as quatro leis fundamentais foram submetidas a testes numéricos independentes (script de verificação <code>validate_laws.py</code> e motor WebGL <code>physicsEngine.js</code>) utilizando integração de Runge-Kutta de 4ª ordem (RK4), diferenças finitas de 9 pontos com condições periódicas em <em>T</em>²/<em>S</em>³ e análise espectral de Fourier 2D. A tabela abaixo documenta os benchmarks quantitativos obtidos:
+          Espirais de formas, direções e dimensões diferentes continuam possíveis como fenômeno. O que saiu foi a afirmação de que todas vêm da mesma lei.
+        </p>
+      </section>
+
+      <!-- PONTOS EM ABERTO -->
+      <section id="sec-aberto" class="paper-section">
+        <h2>Pontos em aberto</h2>
+        <p>
+          A "micro gravidade" ainda não tem definição no modelo, e há duas leituras possíveis com física real por trás.
         </p>
 
         <div class="gh-table-wrap">
           <table class="gh-table">
             <thead>
               <tr>
-                <th>Subsistema Físico-Matemático</th>
-                <th>Método Numérico / Solução de Referência</th>
-                <th>Parâmetros de Teste</th>
-                <th>Métrica / Resíduo Numérico Obtido</th>
-                <th>Status da Validação</th>
+                <th>Leitura</th>
+                <th>O que significaria</th>
+                <th>Linha de pesquisa existente</th>
+                <th>Situação</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>1. Ciclo Limite RG (Eq. 6–8)</strong></td>
-                <td>RK4 (Δℓ = 0.005) vs. Solução Analítica Exata (Eq. 7–8)</td>
-                <td>α<sub>RG</sub> = 0.65, <em>ω</em> = 3.41, <em>σ</em> = 0.22</td>
-                <td>Erro máx: <code>2.757e-08</code> | Raio <em>ρ</em><sub>*</sub> = <code>0.806226</code> | <em>λ</em><sub>*</sub> = <code>6.3096</code></td>
-                <td><span class="gh-badge gh-badge-green">✓ Aprovado (Precisão 10⁻⁸)</span></td>
+                <td><strong>Gravidade como efeito residual do meio</strong></td>
+                <td>A gravidade não é fundamental; emerge do comportamento coletivo da estrutura-mãe</td>
+                <td>Gravidade análoga em superfluidos, onde ondas se propagam como num espaço curvo; gravidade emergente</td>
+                <td>Especulativa; os análogos de laboratório existem, a versão cósmica não tem teste</td>
               </tr>
               <tr>
-                <td><strong>2A. PDE CGLE-Tensão (Regime Coerente)</strong></td>
-                <td>Integração Espectral / Laplaciano 9-pontos (Malha 64×64)</td>
-                <td><em>α</em> = 0.80, <em>β</em> = −0.25 (<em>I</em><sub>BFN</sub> = +0.80 &gt; 0)</td>
-                <td>⟨|Ψ|⟩ = <code>0.9577</code>, Σ<sub>max</sub> = <code>0.3762</code>, defeitos = <code>4</code>, <em>E</em>(<em>k</em>) ∝ <em>k</em><sup>−7.13</sup></td>
-                <td><span class="gh-badge gh-badge-green">✓ Estável &amp; Coerente</span></td>
-              </tr>
-              <tr>
-                <td><strong>2B. PDE CGLE-Tensão (Cascata Turbulenta)</strong></td>
-                <td>Integração Espectral / Laplaciano 9-pontos (Malha 64×64)</td>
-                <td><em>α</em> = 1.60, <em>β</em> = −1.30 (<em>I</em><sub>BFN</sub> = −1.08 &lt; 0)</td>
-                <td>⟨|Ψ|⟩ = <code>0.6826</code>, ⟨Σ⟩ = <code>0.1432</code>, defeitos = <code>20</code>, <em>E</em>(<em>k</em>) ∝ <em>k</em><sup>−5.52</sup></td>
-                <td><span class="gh-badge gh-badge-green">✓ Nucleação Secundária Confirmada</span></td>
-              </tr>
-              <tr>
-                <td><strong>3. Bounce de Einstein-Cartan-Bianchi (Eq. 10–12)</strong></td>
-                <td> Parametrização Conforme d<em>t</em> = <em>a</em> d<em>τ</em> vs. EDO de Friedmann</td>
-                <td><em>ρ</em><sub>0</sub> = 1.0, <em>ρ<sub>c</sub></em> = 0.34 &gt; <em>σ</em><sub>0</sub>² = 0.09</td>
-                <td><em>a</em><sub>min</sub> = <code>0.500000 &gt; 0</code> | Resíduo máx da EDO: <code>2.142e-05</code></td>
-                <td><span class="gh-badge gh-badge-green">✓ Sem Singularidade (a_min &gt; 0)</span></td>
-              </tr>
-              <tr>
-                <td><strong>4. Topologia S³ de Hopf, Beltrami &amp; Călugăreanu</strong></td>
-                <td>Verificação Algébrica Direta em Precisão Dupla IEEE-754</td>
-                <td>Lk = 10.0, <em>r</em><sub>0</sub> = 2.0, <em>p</em> = 1.6</td>
-                <td>Unitaridade <em>S</em>³: <code>1.110e-16</code> | Beltrami: <code>4.441e-16</code> | Călugăreanu: <code>0.000e+00</code></td>
-                <td><span class="gh-badge gh-badge-green">✓ Exato (Precisão de Máquina)</span></td>
+                <td><strong>Gravidade fraca entre regiões</strong></td>
+                <td>Cada região-filha sente só um resíduo pequeno da tensão da estrutura maior</td>
+                <td>Nenhuma direta; o dipolo anômalo seria o único dado relacionado</td>
+                <td>Sem formulação</td>
               </tr>
             </tbody>
           </table>
         </div>
+
+        <h3>Outras questões que o modelo não responde</h3>
+        <ul>
+          <li><strong>O que se divide e por quê.</strong> A divisão de vórtices em laboratório acontece porque dois vórtices pequenos custam menos energia que um grande. Falta o equivalente para a estrutura-mãe.</li>
+          <li><strong>Ganho local e perda global.</strong> Os dados pedem que o condensado perca energia na média cósmica. Formar padrões exige ganho local. Não foi mostrado que os dois convivem.</li>
+          <li><strong>Valor inicial alto do campo.</strong> <code>3,4</code> massas de Planck é teoricamente desconfortável.</li>
+          <li><strong>Coeficiente de acoplamento à luz.</strong> Precisa ser cerca de dez vezes maior que o valor típico de modelos simples.</li>
+          <li><strong>Originalidade.</strong> O modelo G + J pertence a uma classe conhecida (quintessência acoplada com campo tipo áxion). A contribuição própria seria a moldura da cascata, que é justamente a parte ainda sem teste.</li>
+        </ul>
       </section>
 
-      <!-- SEÇÃO 7: PREDIÇÕES FALSIFICÁVEIS (POPPER) -->
-      <section id="sec-7" class="paper-section">
-        <h2>7. Predições Observacionais Falsificáveis e Critérios de Refutação Empírica (Popper)</h2>
+      <!-- REFERÊNCIAS E LIMITAÇÕES DO MÉTODO -->
+      <section id="sec-referencias" class="paper-section" style="margin-bottom: 12px;">
+        <h2>Referências e limitações do método</h2>
         <p>
-          Pelo critério de demarcação de Karl Popper, uma hipótese física só possui caráter científico se especificar claramente quais observações experimentais podem <strong>refutá-la</strong>. Estabelecemos abaixo quatro predições quantitativas falsificáveis:
+          Os cálculos foram feitos nesta análise com integração numérica própria, sem revisão independente. As fontes abaixo foram consultadas por resumo de busca, não lidas na íntegra.
         </p>
 
-        <div class="gh-table-wrap">
-          <table class="gh-table">
-            <thead>
-              <tr>
-                <th>Domínio Observacional</th>
-                <th>Observável Físico &amp; Equação Preditiva</th>
-                <th>Instrumentos / Experimentos</th>
-                <th>Critério Estrito de Falsificação / Refutação</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>1. Cosmologia Primordial (CMB)</strong></td>
-                <td>Modulação log-periódica residual no espectro primordial: <em>P</em><sub>ℛ</sub>(<em>k</em>) = <em>P</em><sub>0</sub>(<em>k</em>)[1 + <em>A</em><sub>log</sub> cos(<em>ω</em> ln(<em>k</em>/<em>k</em><sub>0</sub>) + φ)] com 0.002 ≤ <em>A</em><sub>log</sub> ≤ 0.025.</td>
-                <td>Planck PR4, Simons Observatory, LiteBIRD, CMB-S4</td>
-                <td>Refutado na época primordial se limites futuros excluírem <em>A</em><sub>log</sub> &gt; 10<sup>−4</sup> em toda a janela 2 ≤ <em>ω</em> ≤ 15 ou se for exigido <em>A</em><sub>log</sub> &gt; 0.03 (já excluído pelo Planck 2018).</td>
-              </tr>
-              <tr>
-                <td><strong>2. Astrofísica Extragaláctica (Teia Cósmica)</strong></td>
-                <td>Alinhamento quadrupolar coerente entre spins de galáxias espirais e o vetor tangente de filamentos de Beltrami: ⟨|cos θ<sub>spin-fil</sub>|⟩ − 1/2 ≈ +0.04 a +0.09 até ~15 Mpc/<em>h</em>, com inversão de sinal entre galáxias de baixa e alta massa.</td>
-                <td>SDSS-IV MaNGA, DESI, Euclid, SKA (Faraday Rotation)</td>
-                <td>Refutado se levantamentos espectroscópicos de &gt; 10<sup>6</sup> galáxias mostrarem orientação puramente isotrópica (⟨|cos θ|⟩ = 0.500 ± 0.001) ou ausência de helicidade magnética nos filamentos.</td>
-              </tr>
-              <tr>
-                <td><strong>3. Física Heliosférica (Vento Solar)</strong></td>
-                <td>Anisotropia espectral MHD e conservação da helicidade magnética normalizada σ<sub><em>m</em></sub>(<em>k</em>) ao longo dos braços da Espiral de Parker entre 0.1 UA e 1.0 UA.</td>
-                <td>Parker Solar Probe (PSP), Solar Orbiter</td>
-                <td>Refutado se a relaxação turbulenta heliosférica violar a conservação de helicidade magnética de Taylor-Moffatt em ordens de grandeza antes da reconexão na heliopausa.</td>
-              </tr>
-              <tr>
-                <td><strong>4. Biofísica de Molécula Única (DNA)</strong></td>
-                <td>Limiar abrupto de flambagem plectonêmica τ<sub>crit</sub> = √(2 <em>A<sub>b</sub> F</em>) ≈ 10–30 pN·nm sob força de estiramento <em>F</em> = 0.5–3.0 pN e conservação de Lk = Tw + Wr.</td>
-                <td>Pinças Magnéticas (Magnetic Tweezers) e Pinças Ópticas de Torque</td>
-                <td>Universalmente validado em laboratório (Strick et al., 1996); qualquer desvio violaria a conservação topológica de Călugăreanu-White-Fuller antes da desnaturação das pontes de hidrogênio.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+        <h3>Limitações</h3>
+        <ul>
+          <li>O fundo cósmico entrou só como duas âncoras (densidade de matéria primordial e distância à última superfície de espalhamento), não como espectro completo.</li>
+          <li>O ajuste é por minimização de χ², sem amostragem estatística completa.</li>
+          <li>Os efeitos do acoplamento antes da recombinação foram desprezados.</li>
+          <li>Os limites citados "de memória" (tensão de cordas, limite de <code>b</code>, escala de homogeneidade) precisam ser conferidos.</li>
+        </ul>
 
-      <!-- SEÇÃO 8: REFERÊNCIAS BIBLIOGRÁFICAS -->
-      <section id="sec-8" class="paper-section" style="margin-bottom: 12px;">
-        <h2>8. Referências Bibliográficas (Peer-Reviewed Literature)</h2>
-        <ol style="font-size: 14px; line-height: 1.65;">
-          <li><strong>Aranson, I. S., &amp; Kramer, L.</strong> (2002). The world of the complex Ginzburg-Landau equation. <em>Reviews of Modern Physics</em>, 74(1), 99–143. <span class="mono">DOI: 10.1103/RevModPhys.74.99</span></li>
-          <li><strong>Hehl, F. W., von der Heyde, P., Kerlick, G. D., &amp; Nester, J. M.</strong> (1976). General relativity with spin and torsion: Foundations and prospects. <em>Reviews of Modern Physics</em>, 48(3), 393–416. <span class="mono">DOI: 10.1103/RevModPhys.48.393</span></li>
-          <li><strong>Popławski, N. J.</strong> (2010). Cosmology with torsion: An alternative to cosmic inflation. <em>Physics Letters B</em>, 694(3), 181–185. <span class="mono">DOI: 10.1016/j.physletb.2010.09.056</span></li>
-          <li><strong>Sornette, D.</strong> (1998). Discrete-scale invariance and complex dimensions. <em>Physics Reports</em>, 297(5), 239–270. <span class="mono">DOI: 10.1016/S0370-1573(97)00076-8</span></li>
-          <li><strong>Nottale, L.</strong> (1993). <em>Fractal Space-Time and Microphysics: Towards a Theory of Scale Relativity</em>. World Scientific Publishing, Singapore.</li>
-          <li><strong>Planck Collaboration (Akrami, Y., et al.)</strong> (2020). Planck 2018 results. X. Constraints on inflation. <em>Astronomy &amp; Astrophysics</em>, 641, A10. <span class="mono">DOI: 10.1051/0004-6361/201833887</span></li>
-          <li><strong>Moffatt, H. K.</strong> (1969). The degree of knottedness of tangled vortex lines. <em>Journal of Fluid Mechanics</em>, 35(1), 117–129. <span class="mono">DOI: 10.1017/S0022112069000991</span></li>
-          <li><strong>Taylor, J. B.</strong> (1974). Relaxation of toroidal plasma and generation of reverse magnetic fields. <em>Physical Review Letters</em>, 33(19), 1139–1141. <span class="mono">DOI: 10.1103/PhysRevLett.33.1139</span></li>
-          <li><strong>Lin, C. C., &amp; Shu, F. H.</strong> (1964). On the spiral structure of disk galaxies. <em>The Astrophysical Journal</em>, 140, 646–655. <span class="mono">DOI: 10.1086/147955</span></li>
-          <li><strong>Parker, E. N.</strong> (1958). Dynamics of the interplanetary gas and magnetic fields. <em>The Astrophysical Journal</em>, 128, 664–676. <span class="mono">DOI: 10.1086/146579</span></li>
-          <li><strong>Călugăreanu, G.</strong> (1959). L'intégrale de Gauss et l'analyse des nœuds tridimensionnels. <em>Revue de Mathématiques Pures et Appliquées</em>, 4, 5–20; <strong>Fuller, F. B.</strong> (1971). The writhing number of a space curve. <em>Proceedings of the National Academy of Sciences (PNAS)</em>, 68(4), 815–819.</li>
-        </ol>
+        <h3>Dados</h3>
+        <ul>
+          <li><a href="https://github.com/CobayaSampler/bao_data" target="_blank" rel="noopener noreferrer">DESI DR2, oscilações acústicas de bárions (CobayaSampler/bao_data)</a></li>
+          <li><a href="https://github.com/CobayaSampler/sn_data" target="_blank" rel="noopener noreferrer">Supernovas DES, recalibração Dovekie (CobayaSampler/sn_data)</a></li>
+        </ul>
+
+        <h3>Medidas e limites</h3>
+        <ul>
+          <li><a href="https://arxiv.org/pdf/2503.14738" target="_blank" rel="noopener noreferrer">DESI DR2: resultados cosmológicos (arXiv:2503.14738)</a></li>
+          <li><a href="https://arxiv.org/pdf/2608.06480" target="_blank" rel="noopener noreferrer">Birrefringência cósmica, análise conjunta ACT e Planck (2026, arXiv:2608.06480)</a></li>
+          <li><a href="https://arxiv.org/abs/2601.14559" target="_blank" rel="noopener noreferrer">DES Year 6: aglomeração de galáxias e lentes fracas (arXiv:2601.14559)</a></li>
+          <li><a href="https://arxiv.org/abs/2602.12238" target="_blank" rel="noopener noreferrer">Estado da tensão em S₈, revisão de 2026 (arXiv:2602.12238)</a></li>
+          <li><a href="https://arxiv.org/pdf/2006.08061" target="_blank" rel="noopener noreferrer">Limite de birrefringência anisotrópica, SPTpol (arXiv:2006.08061)</a></li>
+          <li><a href="https://arxiv.org/pdf/1605.07178" target="_blank" rel="noopener noreferrer">Quão isotrópico é o universo? Limites de anisotropia com o Planck (arXiv:1605.07178)</a></li>
+          <li><a href="https://arxiv.org/pdf/2501.06450" target="_blank" rel="noopener noreferrer">Quarenta anos do teste de Ellis-Baldwin (dipolo cósmico, arXiv:2501.06450)</a></li>
+        </ul>
+
+        <h3>Candidatos</h3>
+        <ul>
+          <li><a href="https://arxiv.org/pdf/cond-mat/0407045" target="_blank" rel="noopener noreferrer">Instabilidade de vórtice duplamente quantizado em condensado de Bose-Einstein (cond-mat/0407045)</a></li>
+          <li><a href="https://arxiv.org/pdf/1012.3667" target="_blank" rel="noopener noreferrer">Primeiros testes observacionais da inflação eterna (arXiv:1012.3667)</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Cosmological_natural_selection" target="_blank" rel="noopener noreferrer">Seleção natural cosmológica (Cosmological natural selection)</a></li>
+        </ul>
       </section>
 
     </main>
   </div>
 
   <script>
-    // Alternância entre Tema Claro GitHub (Padrão Acadêmico) e GitHub Dark
     const btnTheme = document.getElementById('btn-theme-toggle');
     btnTheme?.addEventListener('click', () => {
       const html = document.documentElement;
@@ -1373,7 +1169,6 @@
       html.setAttribute('data-theme', next);
     });
 
-    // Exportação / Impressão Direta em PDF (A4 Acadêmico)
     const btnPrint = document.getElementById('btn-print-pdf');
     btnPrint?.addEventListener('click', () => {
       const html = document.documentElement;
@@ -1385,7 +1180,6 @@
       }
     });
 
-    // Se a URL contiver ?print=1, aciona a janela de salvamento em PDF automaticamente
     if (new URLSearchParams(window.location.search).get('print') === '1') {
       window.addEventListener('load', () => {
         setTimeout(() => window.print(), 350);
